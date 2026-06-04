@@ -16,20 +16,24 @@ export default function Inicio() {
         flex-col
         items-center
         justify-center
-        px-150
+        px-4
+        md:px-12
         text-center
       "
     >
       {/* TITULO */}
 
       <h1
-        style={{ fontSize: "60px" }}
         className="
+        fade-up
+        delay-2
         italic
         font-light
         text-[#756a63]
         leading-[1.1]
-        mb-36
+        mb-16
+        text-[3rem]
+        md:text-7xl
   "
 >
         Arte, arquitectura
@@ -40,8 +44,8 @@ export default function Inicio() {
       {/* LINEA */}
 
       <div
+      className="fade-up delay-1 w-48 md:w-[400px] mb-8"
   style={{
-    width: "400px",
     height: "3px",
     backgroundColor:"#C46A4A",
     marginTop: "30px",
@@ -53,6 +57,8 @@ export default function Inicio() {
 
       <nav
         className="
+          fade-up
+          delay-1
           flex
           flex-wrap
           justify-center
@@ -70,6 +76,8 @@ export default function Inicio() {
          href="/arte"
          style={{ color: "#C46A4A" }}
          className="
+         fade-up
+         delay-1
          transition-all
          duration-300
           "
@@ -86,6 +94,8 @@ export default function Inicio() {
           href="/arquitectura"
           style={{ color: "#5F8F87" }}
           className="
+            fade-up
+            delay-1
             transition-all
             duration-300
             hover:opacity-70
@@ -103,6 +113,8 @@ export default function Inicio() {
           href="/escritura"
           style={{ color: "#4F6588" }}
           className="
+            fade-up
+            delay-1
             transition-all
             duration-300
             hover:opacity-70
@@ -120,6 +132,8 @@ export default function Inicio() {
           href="/manifiesto"
           style={{ color: "#B58A3D" }}
           className="
+            fade-up
+            delay-1
             transition-all
             duration-300
             hover:opacity-70
@@ -138,6 +152,8 @@ export default function Inicio() {
 
       <p
         className="
+          fade-up
+          delay-2
           mt-16
           italic
           text-xl
@@ -154,6 +170,8 @@ export default function Inicio() {
 
       <p
         className="
+          fade-up
+          delay-3
           mt-16
           text-sm
           md:text-base

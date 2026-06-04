@@ -28,24 +28,25 @@ export default function Manifiesto() {
     backgroundRepeat: "no-repeat",
   }}
 />
+<div className="relative z-10 max-w-4xl mx-auto">
+  {/* Título */}
 
-      <div className="relative z-10 max-w-[640px]">
-        {/* Título */}
         <h1
   style={{ color: "#B58A3D"}}
   className="
+    fade-up
     text-4xl
     md:text-6xl
     italic
     font-light
-    mb-10
+    mb-16
   "
 >
   Manifiesto
 </h1>
 
         <div
-          className="mt-3 mb-20"
+    className="fade-up delay-1 mt-6 mb-8"
           style={{
             width: "130px",
             height: "2px",
@@ -56,12 +57,14 @@ export default function Manifiesto() {
         {/* Texto */}
         <div
   className="
+    fade-up
+    delay-2
     text-[#756a63]
     text-lg
-    md:text-[1.9rem]
-    leading-relaxed
+    md:text-[1.25rem]
+    leading-loose
     font-light
-    space-y-40
+    space-y-8
   "
 >
           <p>
@@ -119,11 +122,15 @@ export default function Manifiesto() {
         {/* Libertad */}
         <h2
           className="
+            fade-up
+            delay-3
             mt-16
+            md:mt-10
             text-center
             italic
             font-light
             text-4xl
+            md:text 5xl
             text-[#5f554e]
           "
         >
@@ -131,18 +138,25 @@ export default function Manifiesto() {
         </h2>
 
         {/* Foto */}
-        <div className="mt-16 flex justify-center">
+        <div className="fade-up delay-3 mt-16 flex justify-center">
           <Image
-            src="/Photo Perfil.jpeg"
-            alt="Daniela Pamely"
-            width={300}
-            height={400}
-            className="object-cover"
-          />
+  src="/Photo Perfil.jpeg"
+  alt="Daniela Pamely"
+  width={420}
+  height={560}
+  className="
+    object-cover
+    w-[220px]
+    sm:w-[260px]
+    md:w-[320px]
+    lg:w-[380px]
+    h-auto
+  "
+/>
         </div>
 
         {/* Nombre */}
-        <div className="text-center mt-16">
+        <div className="fade-up delay-4 text-center mt-16">
           <h3
             className="
               text-2xl
@@ -167,15 +181,15 @@ export default function Manifiesto() {
         </div>
 
         {/* Firma */}
-        <div className="flex justify-center mt-8">
+        <div className="fade-up delay-4 flex justify-center mt-8">
           <Image
             src="/Firm_est-01.png"
             alt="Firma"
-            width={260}
-            height={160}
+            width={320}
+            height={200}
           />
         </div>
-      </div>
+        </div>
     </main>
   );
 }
