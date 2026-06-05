@@ -1,6 +1,32 @@
+"use client";
+
+import { useRouter } from "next/navigation";
+
 export default function Escritura() {
+  const router = useRouter();
+
   return (
+
     <main className="min-h-screen flex flex-col items-center px-6 text-center pt-32 md:pt-40 relative overflow-hidden">
+
+  <button
+    onClick={() => router.push("/inicio")}
+    className="
+      fixed
+      top-6
+      left-6
+      z-50
+      text-sm
+      uppercase
+      tracking-[0.2em]
+      text-[#212121]
+      drop-shadow-[0_2px_8px_rgba(255,255,255,0.5)]
+      transition-opacity
+      hover:opacity-70
+    "
+  >
+    ← Inicio
+  </button>
 
       {/* Fondo */}
       <div

@@ -1,10 +1,13 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 export default function ArtePage() {
+  const router = useRouter();
   return (
     <main
+  
       className="
         min-h-screen
         flex
@@ -15,6 +18,24 @@ export default function ArtePage() {
         overflow-hidden
       "
     >
+      <button
+  onClick={() => router.push("/inicio")}
+  className="
+    fixed
+    top-6
+    left-6
+    z-50
+    text-sm
+    uppercase
+    tracking-[0.2em]
+    text-[#212121]
+    drop-shadow-[0_2px_8px_rgba(255,255,255,0.5)]
+    transition-opacity
+    hover:opacity-70
+  "
+>
+  ← Inicio
+</button>
       {/* Fondo */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"

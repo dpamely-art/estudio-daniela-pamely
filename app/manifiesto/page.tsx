@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Manifiesto() {
+  const router = useRouter();
   return (
     <main
   className="
@@ -17,6 +21,24 @@ export default function Manifiesto() {
     backgroundColor: "rgba(255,255,255,0.78)",
   }}
 >
+  <button
+  onClick={() => router.push("/inicio")}
+  className="
+    fixed
+    top-6
+    left-6
+    z-50
+    text-sm
+    uppercase
+    tracking-[0.2em]
+    text-[#212121]
+    drop-shadow-[0_2px_8px_rgba(255,255,255,0.5)]
+    transition-opacity
+    hover:opacity-70
+  "
+>
+  ← Inicio
+</button>
       {/* Fondo */}
       <div
   className="fixed inset-0 pointer-events-none"

@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
+import { useRouter } from "next/navigation";
 
 const fadeUp: Variants = {
   hidden: {
@@ -20,9 +21,28 @@ const fadeUp: Variants = {
 };
 
 export default function ArquitecturaPageV2() {
+  const router = useRouter();
+
   return (
     <main className="bg-[#F7F4F1] text-[#212121] overflow-x-hidden">
-      
+      <button
+  onClick={() => router.push("/inicio")}
+ className="
+  fixed
+  top-6
+  left-6
+  z-50
+  text-sm
+  uppercase
+  tracking-[0.2em]
+  text-white
+  drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]
+  transition-opacity
+  hover:opacity-70
+"
+>
+  ← Inicio
+</button>
       {/* HERO */}
       <section className="relative h-screen min-h-[800px]">
       <Image
