@@ -65,6 +65,8 @@ const handleTouchEnd = (e: TouchEvent) => {
   }
 };
     window.addEventListener("wheel", handleWheel);
+window.addEventListener("touchstart", handleTouchStart);
+window.addEventListener("touchend", handleTouchEnd);
 
 return () => {
   window.removeEventListener("wheel", handleWheel);
@@ -74,7 +76,7 @@ return () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 bg-[#f5f2ef] text-[#6f655f] overflow-hidden">
+    <div className="fixed inset-0 bg-[#f5f2ef] text-[#6f655f] overflow-hidden touch-none">
       <AnimatePresence mode="wait">
         {step < 5 ? (
           <motion.div
