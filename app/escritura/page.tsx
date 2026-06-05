@@ -128,21 +128,43 @@ export default function Escritura() {
           </p>
 
           <form
-            action="mailto:dpev.arq@gmail.com"
-            method="post"
-            encType="text/plain"
-            className="
-              flex
-              flex-col
-              md:flex-row
-              gap-4
-              justify-center
-              items-center
-            "
-          >
+  action="https://formsubmit.co/dpev.arq@gmail.com"
+  method="POST"
+  className="
+    flex
+    flex-col
+    md:flex-row
+    gap-4
+    justify-center
+    items-center
+  "
+>
+  <input
+  type="hidden"
+  name="_subject"
+  value="Nuevo contacto - Puerta Escritura"
+/>
+
+<input
+  type="hidden"
+  name="_captcha"
+  value="false"
+/>
+
+<input
+  type="hidden"
+  name="_template"
+  value="table"
+/>
+
+<input
+  type="hidden"
+  name="_next"
+  value="https://www.estudiodanielapamely.com/escritura"
+/>
             <input
               type="email"
-              name="correo"
+              name="email"
               placeholder="tu correo electrónico"
               className="
                 w-full

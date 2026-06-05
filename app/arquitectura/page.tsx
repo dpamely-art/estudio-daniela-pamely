@@ -404,7 +404,7 @@ export default function ArquitecturaPageV2() {
       </p>
 
       <a
-        href="https://wa.me/TUNUMERO"
+        href="https://wa.me/5540877942"
         target="_blank"
         rel="noopener noreferrer"
         className="
