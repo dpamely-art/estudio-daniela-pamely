@@ -77,6 +77,25 @@ return () => {
 
   return (
     <div className="fixed inset-0 bg-[#f5f2ef] text-[#6f655f] overflow-hidden touch-none">
+      {step < 5 && (
+  <button
+    onClick={() => setStep(5)}
+    className="
+      fixed
+      top-6
+      right-6
+      z-50
+      text-sm
+      uppercase
+      tracking-[0.2em]
+      text-[#6f655f]
+      hover:opacity-70
+      transition-opacity
+    "
+  >
+    Skip →
+  </button>
+)}
       <AnimatePresence mode="wait">
         {step < 5 ? (
           <motion.div
