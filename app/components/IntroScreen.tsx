@@ -19,6 +19,7 @@ export default function IntroScreen() {
 
   useEffect(() => {
     let locked = false;
+    let touchStartY = 0;
 
     const handleWheel = (e: WheelEvent) => {
       if (locked) return;
@@ -37,12 +38,39 @@ export default function IntroScreen() {
         setStep((prev) => Math.max(prev - 1, 0));
       }
     };
+const handleTouchStart = (e: TouchEvent) => {
+  touchStartY = e.touches[0].clientY;
+};
 
+const handleTouchEnd = (e: TouchEvent) => {
+  if (locked) return;
+
+  const touchEndY = e.changedTouches[0].clientY;
+  const difference = touchStartY - touchEndY;
+
+  if (Math.abs(difference) < 50) return;
+
+  locked = true;
+
+  setTimeout(() => {
+    locked = false;
+  }, 700);
+
+  if (difference > 0) {
+    setStep((prev) => Math.min(prev + 1, 5));
+  }
+
+  if (difference < 0) {
+    setStep((prev) => Math.max(prev - 1, 0));
+  }
+};
     window.addEventListener("wheel", handleWheel);
 
-    return () => {
-      window.removeEventListener("wheel", handleWheel);
-    };
+return () => {
+  window.removeEventListener("wheel", handleWheel);
+  window.removeEventListener("touchstart", handleTouchStart);
+  window.removeEventListener("touchend", handleTouchEnd);
+};
   }, []);
 
   return (
