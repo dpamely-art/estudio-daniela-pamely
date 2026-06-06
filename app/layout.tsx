@@ -22,9 +22,8 @@ export default function RootLayout({
     <html lang="es">
       <body className={acumin.variable}>
         {children}
+        <GoogleAnalytics gaId="G-G63FZRJVJH" />
       </body>
-      
-      <GoogleAnalytics gaId="G-G63FZRJVJH" />
     </html>
   );
 }
