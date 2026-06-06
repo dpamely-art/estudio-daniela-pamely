@@ -156,73 +156,62 @@ export default function Escritura() {
           <form
   action="https://formsubmit.co/dpev.arq@gmail.com"
   method="POST"
-  className="
-    flex
-    flex-col
-    md:flex-row
-    gap-4
-    justify-center
-    items-center
-  "
+  className="flex flex-col gap-4"
 >
+
   <input
-  type="hidden"
-  name="_subject"
-  value="Nuevo contacto - Puerta Escritura"
-/>
+    type="hidden"
+    name="_subject"
+    value="Nueva solicitud de invitación - Escritura"
+  />
 
-<input
-  type="hidden"
-  name="_captcha"
-  value="false"
-/>
+  <input
+    type="hidden"
+    name="_captcha"
+    value="false"
+  />
 
-<input
-  type="hidden"
-  name="_template"
-  value="table"
-/>
+  <input
+    type="hidden"
+    name="_next"
+    value="https://www.estudiodanielapamely.com/gracias"
+  />
 
-<input
-  type="hidden"
-  name="_next"
-  value="https://www.estudiodanielapamely.com/escritura"
-/>
-            <input
-              type="email"
-              name="email"
-              placeholder="tu correo electrónico"
-              className="
-                w-full
-                md:w-80
-                px-4
-                py-3
-                border
-                border-[#d6ccc5]
-                bg-white/70
-                text-[#756a63]
-                focus:outline-none
-              "
-              required
-            />
+  <input
+    type="hidden"
+    name="_template"
+    value="table"
+  />
 
-            <button
-              type="submit"
-              className="
-                px-8
-                py-3
-                bg-[#4F6588]
-                text-white
-                tracking-[0.15em]
-                uppercase
-                text-sm
-                hover:opacity-80
-                transition
-              "
-            >
-              Quiero saber más
-            </button>
-          </form>
+  <input
+    type="email"
+    name="email"
+    required
+    placeholder="correo@ejemplo.com"
+    className="
+      w-full
+      border
+      border-[#C46A4A]
+      text-[#C46A4A]
+      px-8
+      py-4
+    "
+  />
+
+  <button
+    type="submit"
+    className="
+      w-full
+      bg-[#C46A4A]
+      text-white
+      px-8
+      py-4
+    "
+  >
+    Recibir invitación
+  </button>
+
+</form>
 
           <p
             className="
