@@ -95,7 +95,7 @@ export default function ArtePage() {
 <input
   type="hidden"
   name="_next"
-  value="http://localhost:3000/gracias"
+  value="https://www.estudiodanielapamely.com/gracias"
 />
   <input
     type="hidden"
