@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const acumin = localFont({
   src: "../Fonts/Acumin-Variable-Concept.ttf",
@@ -22,6 +23,8 @@ export default function RootLayout({
       <body className={acumin.variable}>
         {children}
       </body>
+      
+      <GoogleAnalytics gaId="G-G63FZRJVJH" />
     </html>
   );
 }
