@@ -92,17 +92,15 @@ export default function ArtePage() {
     name="_captcha"
     value="false"
   />
-
+<input
+  type="hidden"
+  name="_next"
+  value="http://localhost:3000/gracias"
+/>
   <input
     type="hidden"
     name="_template"
     value="table"
-  />
-
-  <input
-    type="hidden"
-    name="_next"
-    value="https://www.estudiodanielapamely.com/arte"
   />
 
   <input
@@ -118,6 +116,7 @@ export default function ArtePage() {
       px-8
       py-4
     "
+  
   />
 
   <button
