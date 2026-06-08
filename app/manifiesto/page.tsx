@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import FadeUp from "../components/Motion/FadeUp";
+import ImageReveal from "../components/Motion/ImageReveal";
 
 export default function Manifiesto() {
   const router = useRouter();
@@ -136,17 +137,20 @@ export default function Manifiesto() {
           </h2>
         </div>
       </FadeUp>
-      
-        <div className="flex justify-center my-16">
+
+        <ImageReveal delay={0.2}>
+         <div className="flex justify-center my-16">
           <Image
             src="/Photo Perfil.jpeg"
             alt="Daniela Pamely"
             width={430}
             height={560}
             className="w-[250px] md:w-[340px] h-auto object-cover"
-          />
-        </div>
+        />
+          </div>
+        </ImageReveal>
 
+       <ImageReveal delay={0.5}>
         <div className="text-center text-[#5f554e]">
           <h3 className="uppercase tracking-[0.28em] text-2xl">
             Daniela Pamely
@@ -163,7 +167,9 @@ export default function Manifiesto() {
             />
           </div>
         </div>
+        </ImageReveal>
 
+        <FadeUp delay={0.2}>
         <div className="max-w-2xl mx-auto text-center mt-20 text-[#756a63] leading-[2]">
           <p>Y si después de encontrarte con este Estudio,</p>
           <p>descubres que aún puedes elegir una vida más libre,</p>
@@ -177,6 +183,7 @@ export default function Manifiesto() {
             Gracias por habitar este manifiesto.
           </p>
         </div>
+        </FadeUp>
       </section>
     </main>
   );
