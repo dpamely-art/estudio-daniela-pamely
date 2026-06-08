@@ -38,7 +38,7 @@ export default function Manifiesto() {
         </h1>
         </FadeUp>
         <div className="w-32 h-[2px] bg-[#C46A4A] mt-6 mb-12" />
-
+      <FadeUp>
         <div className="max-w-3xl text-[#756a63] text-lg md:text-[1.22rem] leading-[1.95] font-light space-y-10">
           <p>
             Creemos que la forma en que habitamos el mundo termina por habitar
@@ -62,8 +62,11 @@ export default function Manifiesto() {
             desconectada sea la única forma posible de vivir.
           </p>
         </div>
+      </FadeUp>
 
+      <FadeUp>
         <div className="my-20 grid lg:grid-cols-2 gap-12 items-start">
+          
           
           <div className="text-[#756a63] text-lg md:text-[1.18rem] leading-[1.9] font-light space-y-8">
             
@@ -90,7 +93,9 @@ export default function Manifiesto() {
           </div>
         
         </div>
+     </FadeUp>
 
+     <FadeUp>
         <div className="my-20 grid md:grid-cols-3 gap-8 text-[#756a63]">
           {[
             ["Cada proyecto", "es una invitación", "a detenerse."],
@@ -104,7 +109,9 @@ export default function Manifiesto() {
             </div>
           ))}
         </div>
+     </FadeUp>
 
+     <FadeUp>
         <div className="max-w-3xl ml-auto text-[#756a63] text-lg md:text-[1.2rem] leading-[1.95] font-light space-y-8 my-20">
           <p>
             Porque creemos que habitar no consiste en ocupar un lugar.
@@ -116,7 +123,9 @@ export default function Manifiesto() {
             cuidados.
           </p>
         </div>
+      </FadeUp>
 
+      <FadeUp>
         <div className="my-24 text-center">
           <p className="text-[#756a63] text-xl mb-5">
             Nuestro trabajo no busca impresionar.
@@ -126,7 +135,8 @@ export default function Manifiesto() {
             Busca reconciliar.
           </h2>
         </div>
-
+      </FadeUp>
+      
         <div className="flex justify-center my-16">
           <Image
             src="/Photo Perfil.jpeg"
