@@ -120,13 +120,13 @@ export default function ArquitecturaPageV2() {
       viewport={{ once: true }}
       variants={fadeUp}
     >
-      <h2 className="text-6xl md:text-[6.5rem] leading-[0.95] font-light mb-36">
+      <h2 className="text-6xl md:text-[6.5rem] tracking-tight leading-[0.95] font-light mb-28">
         Antes del primer
         <br />
         trazo.
       </h2>
 
-      <div className="space-y-56">
+      <div className="space-y-24 md:space-y-32">
 
         {/* 01 */}
         <div className="relative">
@@ -134,7 +134,7 @@ export default function ArquitecturaPageV2() {
             01
           </span>
 
-          <div className="relative max-w-2xl">
+          <div className="relative max-w-3xl">
             <h3 className="text-3xl md:text-4xl font-light mb-6">
               Escucho antes de proponer.
             </h3>
@@ -147,11 +147,11 @@ export default function ArquitecturaPageV2() {
 
         {/* 02 */}
         <div className="relative">
-          <span className="absolute left-20 -top-14 text-[9rem] md:text-[11rem] font-light text-black/[0.02] leading-none">
+          <span className="absolute left-20 -top-14 text-[11rem] md:text-[14rem] font-light text-black/[0.02] leading-none">
             02
           </span>
 
-          <div className="relative ml-20 md:ml-40 max-w-2xl">
+          <div className="relative ml-20 md:ml-32 max-w-3xl">
             <h3 className="text-3xl md:text-4xl font-light mb-6">
               Analizo antes de diseñar.
             </h3>
@@ -168,7 +168,7 @@ export default function ArquitecturaPageV2() {
             03
           </span>
 
-          <div className="relative ml-40 md:ml-80 max-w-2xl">
+          <div className="relative ml-32 md:ml-56 max-w-3xl">
             <h3 className="text-3xl md:text-4xl font-light mb-6">
               Construyo identidad espacial.
             </h3>
@@ -310,7 +310,9 @@ export default function ArquitecturaPageV2() {
 </section>
 
 {/* SERVICIOS */}
-<section className="max-w-7xl mx-auto px-8 md:px-16 py-20 md:py-28">
+<section
+id="servicios"
+className="max-w-7xl mx-auto px-8 md:px-16 py-20 md:py-28">
 
   <motion.div
     initial="hidden"
@@ -333,62 +335,132 @@ export default function ArquitecturaPageV2() {
 
     <div className="grid md:grid-cols-2 xl:grid-cols-5 gap-6">
 
-      <div className="border border-[#E7E0D8] p-8 min-h-[320px]">
-        <h3 className="text-2xl font-light mb-6">
-          Diseño arquitectónico
-        </h3>
+{[
+{
+icon:"⌂",
+title:"Diseño arquitectónico",
+href:"/arquitectura/diseno-arquitectonico",
+text:"Desde la primera idea hasta el proyecto ejecutivo. Espacios concebidos para responder a quienes los habitan."
+},
+{
+icon:"◫",
+title:"Planeación de proyectos",
+href:"/arquitectura/planeacion-proyectos",
+text:"Estrategia, coordinación y claridad para transformar una visión en una ruta realizable."
+},
+{
+icon:"△",
+title:"Dirección y supervisión de obra",
+href:"/arquitectura/direccion-supervision",
+text:"Acompañamiento técnico para asegurar calidad, tiempo y ejecución durante cada etapa de la obra."
+},
+{
+icon:"▣",
+title:"Control físico-financiero",
+href:"/arquitectura/control-fisfin",
+text:"Seguimiento integral de avance, presupuesto y cumplimiento para una toma de decisiones informada."
+},
+{
+icon:"◌",
+title:"Consultoría estratégica",
+href:"/arquitectura/consultoria-estrategica",
+text:"Análisis y acompañamiento para proyectos que requieren visión, estructura y dirección a largo plazo."
+},
+].map((service) => (
 
-        <p className="text-neutral-600 leading-relaxed">
-          Desde la primera idea hasta el proyecto ejecutivo.
-          Espacios concebidos para responder a quienes los habitan.
-        </p>
-      </div>
+<Link
+  key={service.title}
+  href={service.href}
+  className="block"
+>
 
-      <div className="border border-[#E7E0D8] p-8 min-h-[320px]">
-        <h3 className="text-2xl font-light mb-6">
-          Planeación de proyectos
-        </h3>
+<div
+className="
+group
+border
+border-[#E7E0D8]
+p-8
+min-h-[440px]
+flex
+flex-col
+transition-all
+duration-500
+hover:-translate-y-2
+hover:shadow-xl
+hover:border-[#C26D52]
+cursor-pointer
+"
+>
 
-        <p className="text-neutral-600 leading-relaxed">
-          Estrategia, coordinación y claridad para transformar una visión
-          en una ruta realizable.
-        </p>
-      </div>
+<div
+className="
+text-5xl
+font-light
+text-[#C26D52]/70
+mb-12
+transition-transform
+duration-500
+group-hover:-translate-y-1
+"
+>
+{service.icon}
+</div>
 
-      <div className="border border-[#E7E0D8] p-8 min-h-[320px]">
-        <h3 className="text-2xl font-light mb-6">
-          Dirección y supervisión de obra
-        </h3>
+<h3
+className="
+text-2xl
+font-light
+leading-tight
+"
+>
+{service.title}
+</h3>
 
-        <p className="text-neutral-600 leading-relaxed">
-          Acompañamiento técnico para asegurar calidad, tiempo y ejecución
-          durante cada etapa de la obra.
-        </p>
-      </div>
+<div
+className="
+w-10
+h-px
+bg-[#C26D52]
+mt-6
+mb-6
+transition-all
+duration-500
+group-hover:w-24
+"
+/>
 
-      <div className="border border-[#E7E0D8] p-8 min-h-[320px]">
-        <h3 className="text-2xl font-light mb-6">
-          Control físico-financiero
-        </h3>
+<p
+className="
+text-neutral-600
+leading-relaxed
+flex-1
+"
+>
+{service.text}
+</p>
 
-        <p className="text-neutral-600 leading-relaxed">
-          Seguimiento integral de avance, presupuesto y cumplimiento
-          para una toma de decisiones informada.
-        </p>
-      </div>
+<p
+className="
+mt-8
+uppercase
+tracking-[0.18em]
+text-xs
+text-[#C26D52]
+opacity-0
+group-hover:opacity-100
+transition-all
+duration-500
+"
+>
+Conocer →
+</p>
 
-      <div className="border border-[#E7E0D8] p-8 min-h-[320px]">
-        <h3 className="text-2xl font-light mb-6">
-          Consultoría estratégica
-        </h3>
+</div>
 
-        <p className="text-neutral-600 leading-relaxed">
-          Análisis y acompañamiento para proyectos que requieren visión,
-          estructura y dirección a largo plazo.
-        </p>
-      </div>
+</Link>
 
-    </div>
+))}
+</div>
 
   </motion.div>
 
