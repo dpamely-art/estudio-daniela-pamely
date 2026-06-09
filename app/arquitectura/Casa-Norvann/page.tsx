@@ -189,7 +189,7 @@ router.push("/arquitectura#proyectos");
     font-light
     leading-[1.9]
     text-[#B8ADA1]
-    max-w-3xl
+    max-w-4xl
     mx-auto
   "
 >

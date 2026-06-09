@@ -20,10 +20,10 @@ export default function CasalopezcortesPage() {
     overflow-hidden
   "
   style={{
+    backgroundColor: "#1d1d1d",
     backgroundImage: "url('/LC-1.jpeg')",
-    backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
+    backgroundPosition: "center center",
     backgroundSize: "cover",
   }}
 >
@@ -187,8 +187,8 @@ Toda arquitectura comienza mucho antes de ser construida.
     md:text-xl
     font-light
     leading-[1.9]
-    text-[#F2EEE8]/85
-    max-w-3xl
+    text-[#B8ADA1]
+    max-w-4xl
     mx-auto
   "
 >
