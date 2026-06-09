@@ -1,3 +1,4 @@
+
 export default function GraciasPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-[#F7F4F1] px-8">
@@ -21,6 +22,7 @@ export default function GraciasPage() {
           Volver al estudio
         </a>
       </div>
+    
     </main>
   );
 }

@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 
+
 export default function ArtePage() {
   const router = useRouter();
   return (
@@ -132,8 +133,12 @@ export default function ArtePage() {
     Recibir invitación
   </button>
 </form>
+
         </div>
+       
+
       </motion.div>
+     
     </main>
   );
 }

@@ -345,7 +345,7 @@ router.push("/arquitectura#servicios");
               max-w-4xl
             "
           >
-            Más que representar un gasto adicional, un adecuado control físico - financiero permite reducir riesgos, 
+            Más que representar un gasto adicional, un adecuado control físico - financiero apermite reducir riesgos, 
             optimizar recursos y fortalecer la calidad del proceso constructivo.
           </p>
 

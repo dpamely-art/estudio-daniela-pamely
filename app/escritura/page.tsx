@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Footer from "@/app/components/Footer";
 
 export default function Escritura() {
   const router = useRouter();
@@ -229,7 +230,8 @@ export default function Escritura() {
         </div>
 
       </div>
-
+<Footer />
     </main>
+    
   );
 }

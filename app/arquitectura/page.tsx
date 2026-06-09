@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Footer from "@/app/components/Footer";
 
 const fadeUp: Variants = {
   hidden: {
@@ -247,7 +248,9 @@ export default function ArquitecturaPageV2() {
 
  {/* PROYECTOS */}
 <section className="max-w-7xl mx-auto px-8 md:px-16 pt-16 pb-24 md:pt-20 md:pb-32">
+ 
   <motion.div
+   id="proyectos"
     initial="hidden"
     whileInView="visible"
     viewport={{ once: true }}
@@ -263,19 +266,19 @@ export default function ArquitecturaPageV2() {
           title: "Casa Norvann",
           category: "Diseño de interiores",
           image: "/casa-norvann.png",
-          href: "/arquitectura/casa-norvann",
+          href: "/arquitectura/Casa-Norvann",
         },
         {
           title: "Casa López Cortés",
           category: "Proyecto ejecutivo y construcción",
           image: "/casa-lopez-cortes.png",
-          href: "/arquitectura/casa-lopez-cortes",
+          href: "/arquitectura/Casa-lopezcortes",
         },
         {
           title: "Rescate de espacios públicos",
           category: "Espacio urbano",
           image: "/rescate-espacios-publicos.png",
-          href: "/arquitectura/rescate-espacios-publicos",
+          href: "/arquitectura/Rescate-espacios",
         },
       ].map((project) => (
         <Link
@@ -517,9 +520,9 @@ Conocer →
     </motion.div>
 
   </div>
-
+  
 </section>
-
+<Footer />
     </main>
   );
 }

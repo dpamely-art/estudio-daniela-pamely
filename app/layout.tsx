@@ -9,9 +9,12 @@ const acumin = localFont({
   variable: "--font-acumin",
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Estudio Daniela Pamely",
-  description: "Memoria, cuerpo, arte y arquitectura para habitar el mundo con libertad.",
+  description: "Arquitectura, Arte y Escritura",
+  icons: {
+    icon: "/DP_PAG-01.png",
+  },
 };
 
 export default function RootLayout({

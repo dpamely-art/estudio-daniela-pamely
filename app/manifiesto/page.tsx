@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import FadeUp from "../components/Motion/FadeUp";
 import ImageReveal from "../components/Motion/ImageReveal";
+import Footer from "@/app/components/Footer";
 
 export default function Manifiesto() {
   const router = useRouter();
@@ -179,12 +180,15 @@ export default function Manifiesto() {
             entonces nuestra labor habrá comenzado.
           </p>
 
-          <p className="mt-10 text-sm uppercase tracking-[0.25em]">
+          <p className="mt-10 text-sm uppercase tracking-[0.35em]">
             Gracias por habitar este manifiesto.
           </p>
         </div>
         </FadeUp>
       </section>
+      <div className="mt-32">
+  <Footer />
+</div>
     </main>
   );
 }
