@@ -31,10 +31,9 @@ export default function DisenoArquitectonicoPage() {
 
   style={{
     backgroundImage: "url('/background-servicios1.png')",
-    backgroundAttachment: "fixed",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top center",
-    backgroundSize: "100% auto",
+    backgroundSize: "cover",
   }}
 >
 
