@@ -33,7 +33,7 @@ export default function controlfisfinpage() {
     backgroundImage: "url('/background-servicios4.png')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top center",
-    backgroundSize:"100% auto",
+    backgroundSize:"cover",
   }}
 >
 

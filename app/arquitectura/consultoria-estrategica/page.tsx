@@ -33,7 +33,7 @@ export default function consultoriaestrategicapage() {
     backgroundImage: "url('/background-servicios5.png')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top center",
-    backgroundSize:"100% auto",
+    backgroundSize:"cover",
   }}
 >
 

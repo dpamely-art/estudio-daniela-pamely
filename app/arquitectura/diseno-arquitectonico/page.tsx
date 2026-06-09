@@ -33,7 +33,7 @@ export default function DisenoArquitectonicoPage() {
     backgroundImage: "url('/background-servicios1.png')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top center",
-    backgroundSize:"100% auto",
+    backgroundSize:"cover",
   }}
 >
 
