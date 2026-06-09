@@ -13,6 +13,7 @@ export default function CasaNorvannPage() {
 <section
   className="
     relative
+    isolate
     h-screen
     flex
     items-center
@@ -20,15 +21,16 @@ export default function CasaNorvannPage() {
     overflow-hidden
   "
   style={{
-    backgroundImage: "url('/casa-norvann.png')",
-    backgroundAttachment: "fixed",
-    backgroundRepeat: "no-repeat",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-  }}
+  backgroundColor:"#1d1d1d",
+  backgroundImage: "url('/casa-norvann.png')",
+  backgroundRepeat: "no-repeat",
+  backgroundPosition: "center center",
+  backgroundSize: "cover",
+}}
+
 >
 
-  <div className="absolute inset-0 bg-black/20" />
+ <div className="absolute inset-0 z-0 bg-black/20" />
 
   <button
       style={{ color: ivory }}
@@ -59,9 +61,9 @@ router.push("/arquitectura#proyectos");
     transition={{ duration: 1 }}
     className="
       relative
-      z-10
+      z-20
       text-center
-      max-w-5xl
+      max-w-5xl     
       px-6
     "
   >
