@@ -150,12 +150,11 @@ router.push("/arquitectura#proyectos");
 <section className="py-32 md:py-44 px-8 md:px-16">
 
   <motion.div
-    initial={{ opacity: 0, y: 40 }}
-    whileInView={{ opacity: 1, y: 0 }}
+    initial={false}
+    animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.9 }}
-    viewport={{ once: true }}
     className="max-w-6xl mx-auto"
-  >
+>
 
     <p
       className="
@@ -175,7 +174,6 @@ router.push("/arquitectura#proyectos");
     font-light
     leading-[1.45]
     tracking-tight
-    text-[#F2EEE8]
     max-w-4xl
     mx-auto
   "
@@ -190,7 +188,7 @@ router.push("/arquitectura#proyectos");
     md:text-xl
     font-light
     leading-[1.9]
-    text-[#F2EEE8]/85
+    text-[#CFC6BA]
     max-w-3xl
     mx-auto
   "
