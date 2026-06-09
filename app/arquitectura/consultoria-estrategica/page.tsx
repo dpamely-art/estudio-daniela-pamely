@@ -25,17 +25,20 @@ export default function consultoriaestrategicapage() {
   return (
     <main
   className="
+    relative
     overflow-x-hidden
-    text-red-500
   "
-
+>
+<div
+  className="fixed inset-0 -z-10"
   style={{
     backgroundImage: "url('/background-servicios5.png')",
     backgroundRepeat: "no-repeat",
-    backgroundPosition: "top center",
-    backgroundSize:"cover",
+    backgroundPosition: "center top",
+    backgroundSize: "cover",
   }}
->
+/>
+<div className="relative z-10">
 
       <button
       style={{ color: ivory }}
@@ -465,6 +468,7 @@ router.push("/arquitectura#servicios");
       </section>
 
       <Footer />
+      </div>
 
     </main>
   );
