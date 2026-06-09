@@ -33,7 +33,7 @@ export default function PlaneacionproyectosPage() {
     backgroundImage: "url('/background-servicios2.png')",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "top center",
-    backgroundSize: "cover",
+    backgroundSize:"100% auto",
   }}
 >
 
