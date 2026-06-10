@@ -31,7 +31,14 @@ const menu = [
   },
 ];
 
-export default function NavigationMuseo() {
+type NavigationMuseoProps = {
+  onOpenConversation: () => void;
+};
+
+export default function NavigationMuseo({
+  onOpenConversation,
+}: NavigationMuseoProps) {
+  
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
 
@@ -117,9 +124,15 @@ export default function NavigationMuseo() {
 
               return (
                 <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`
+  key={item.href}
+  href={item.href}
+  onClick={(e) => {
+    if (item.title === "INTRODUCCIÓN") {
+      e.preventDefault();
+      onOpenConversation();
+    }
+  }}
+  className={`
                   group
                   relative
                   overflow-visible
@@ -225,10 +238,17 @@ export default function NavigationMuseo() {
 
       return (
         <Link
-          key={item.href}
-          href={item.href}
-          onClick={() => setIsOpen(false)}
-          className="group relative"
+  key={item.href}
+  href={item.href}
+  onClick={(e) => {
+    setIsOpen(false);
+
+    if (item.title === "INTRODUCCIÓN") {
+      e.preventDefault();
+      onOpenConversation();
+    }
+  }}
+  className="group relative"
           style={{
             color: active ? "#D7A47C" : "#E6DDD3",
 

@@ -1,12 +1,24 @@
+"use client";
+
+import { useState } from "react";
+
 import NavigationMuseo from "./components/NavigationMuseo";
 import HeroMuseo from "./components/HeroMuseo";
 import CarruselMuseo from "./components/CarruselMuseo";
 import FooterMuseo from "./components/FooterMuseo";
+import ConversationModal from "./components/ConversationModal";
 
 export default function ArtePage() {
+  const [openConversation, setOpenConversation] =
+    useState(false);
+
   return (
     <>
-      <NavigationMuseo />
+      <NavigationMuseo
+        onOpenConversation={() =>
+          setOpenConversation(true)
+        }
+      />
 
       <main
         className="
@@ -31,8 +43,17 @@ export default function ArtePage() {
             justify-center
           "
         >
-          <HeroMuseo />
+          <HeroMuseo
+            openConversation={openConversation}
+          />
         </section>
+
+        <ConversationModal
+          open={openConversation}
+          onClose={() =>
+            setOpenConversation(false)
+          }
+        />
 
         {/* CARRUSEL */}
 
