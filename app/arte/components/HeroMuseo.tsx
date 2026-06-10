@@ -18,16 +18,16 @@ export default function HeroMuseo() {
 
      <h1
   style={{
-    fontSize: "82px",
+    fontSize: "clamp(42px, 8vw, 82px)",
     lineHeight: "0.95",
     fontWeight: 300,
     letterSpacing: "0.02em",
     color: "#D8D2CC",
     textAlign: "center",
-
     maxWidth: "980px",
     margin: "0 auto",
     transform: "translateY(42px)",
+    padding: "0 16px",
   }}
 >
   ARTE PARA HABITAR
@@ -47,22 +47,23 @@ export default function HeroMuseo() {
 
       {/* Texto */}
 
-      <p
-      style={{
-  color: "#D8D2CC",
-  fontSize: "22px",
-  lineHeight: "1.8",
-  fontWeight: 300,
-  textAlign: "center",
-  maxWidth: "720px",
-}}
-      >
-        Un museo virtual donde el arte y la historia
-        <br />
-        se encuentran para transformar espacios
-        <br />
-        y maneras de habitar.
-      </p>
+    <p
+  style={{
+    color: "#D8D2CC",
+    fontSize: "clamp(17px,2vw,22px)",
+    lineHeight: "1.8",
+    fontWeight: 300,
+    textAlign: "center",
+    maxWidth: "720px",
+    padding: "0 20px",
+  }}
+>
+  Un museo virtual donde el arte y la historia
+  <br />
+  se encuentran para transformar espacios
+  <br />
+  y maneras de habitar.
+</p>
 
       {/* Separador */}
 

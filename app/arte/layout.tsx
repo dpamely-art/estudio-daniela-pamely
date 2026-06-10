@@ -6,7 +6,7 @@ type Props = {
 
 export default function ArteLayout({ children }: Props) {
   return (
-    <main className="relative min-h-screen w-full overflow-x-hidden bg-[#05080E]">
+    <main className="relative min-h-screen w-full overflow-x-hidden">
 
       {/* Fondo del museo */}
 
@@ -14,11 +14,15 @@ export default function ArteLayout({ children }: Props) {
         <img
           src="/negaz1.jpeg"
           alt=""
+          style={{
+  filter:
+    "brightness(1.06) contrast(1.02) saturate(1.08)",
+}}
           className="
             w-full
             h-full
             object-cover
-            object-top
+            object-center
             select-none
             pointer-events-none
           "
@@ -28,14 +32,12 @@ export default function ArteLayout({ children }: Props) {
       {/* Capa para unificar el color */}
 
       <div
-        className="
-          fixed
-          inset-0
-          -z-10
-
-          bg-[#03060C]/15
-        "
-      />
+  className="fixed inset-0 -z-10"
+  style={{
+    background:
+      "linear-gradient(rgba(6,15,28,.10), rgba(6,15,28,.18))",
+  }}
+/>
 
       {/* Contenido */}
 
