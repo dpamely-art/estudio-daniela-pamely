@@ -70,7 +70,7 @@ export default function NavigationMuseo() {
   {/* Botón móvil */}
 
 <button
-  className="md:hidden"
+  className="block md:hidden"
   onClick={() => setIsOpen(!isOpen)}
   style={{
     position: "absolute",
