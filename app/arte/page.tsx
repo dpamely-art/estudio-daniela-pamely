@@ -1,144 +1,58 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
-
+import NavigationMuseo from "./components/NavigationMuseo";
+import HeroMuseo from "./components/HeroMuseo";
+import CarruselMuseo from "./components/CarruselMuseo";
+import FooterMuseo from "./components/FooterMuseo";
 
 export default function ArtePage() {
-  const router = useRouter();
   return (
-    <main
-  
-      className="
-        min-h-screen
-        flex
-        items-center
-        justify-center
-        px-8
-        relative
-        overflow-hidden
-      "
-    >
-      <button
-  onClick={() => router.push("/inicio")}
-  className="
-    fixed
-    top-6
-    left-6
-    z-50
-    text-sm
-    uppercase
-    tracking-[0.2em]
-    text-[#212121]
-    drop-shadow-[0_2px_8px_rgba(255,255,255,0.5)]
-    transition-opacity
-    hover:opacity-70
-  "
->
-  ← Inicio
-</button>
-      {/* Fondo */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage: "url('/arte-background.png')",
-        }}
-      />
+    <>
+      <NavigationMuseo />
 
-      {/* Velo */}
-      <div className="absolute inset-0 bg-[#F7F4F1]/50" />
+      <main
+        className="
+          relative
+          w-full
 
-      {/* Contenido */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1.2 }}
-        className="relative z-10 text-center max-w-3xl"
+          flex
+          flex-col
+          items-center
+        "
       >
-        <h1 className="text-7xl md:text-9xl font-light mb-10 text-[#C46A4A]">
-          Arte
-        </h1>
+        {/* HERO */}
 
-        <p className="text-3xl md:text-5xl font-light mb-8 italic text-[#C46A4A]">
-          Muy pronto.
-        </p>
+        <section
+          className="
+            w-full
 
-        <p className="text-lg md:text-xl text-neutral-700 leading-relaxed">
-          Obra original, procesos, exposiciones y proyectos en desarrollo.
-          
-        </p>
+            min-h-screen
 
-        <div className="mt-14 max-w-xl mx-auto">
-          <h3 className="text-2xl md:text-3xl font-light mb-6 text-[#C46A4A]">
-            ¿Te gustaría estar en la inauguración?
-          </h3>
+            flex
+            items-center
+            justify-center
+          "
+        >
+          <HeroMuseo />
+        </section>
 
-          <p className="text-neutral-700 leading-relaxed mb-10">
-            Déjame tu correo y te enviaré una invitación para descubrir la colección.
-          </p>
+        {/* CARRUSEL */}
 
-          <form
-  action="https://formsubmit.co/dpev.arq@gmail.com"
-  method="POST"
-  className="flex flex-col gap-4"
->
-  <input
-    type="hidden"
-    name="_subject"
-    value="Nueva solicitud de invitación - Arte"
-  />
+        <section
+          className="
+            w-full
 
-  <input
-    type="hidden"
-    name="_captcha"
-    value="false"
-  />
-<input
-  type="hidden"
-  name="_next"
-  value="https://www.estudiodanielapamely.com/gracias"
-/>
-  <input
-    type="hidden"
-    name="_template"
-    value="table"
-  />
+            -mt-24
 
-  <input
-    type="email"
-    name="email"
-    required
-    placeholder="correo@ejemplo.com"
-    className="
-      w-full
-      border
-      border-[#C46A4A]
-      text-[#C46A4A]
-      px-8
-      py-4
-    "
-  
-  />
+            flex
+            justify-center
+          "
+        >
+          <CarruselMuseo />
+        </section>
 
-  <button
-    type="submit"
-    className="
-      w-full
-      bg-[#C46A4A]
-      text-white
-      px-8
-      py-4
-    "
-  >
-    Recibir invitación
-  </button>
-</form>
+        {/* FOOTER */}
 
-        </div>
-       
-
-      </motion.div>
-     
-    </main>
+        <FooterMuseo />
+      </main>
+    </>
   );
 }
