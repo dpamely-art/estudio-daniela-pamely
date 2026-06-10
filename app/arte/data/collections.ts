@@ -78,7 +78,7 @@ export const collections = [
   number: "008",
   title: "La obra llega a ti",
   subtitle:
-    "Envíos protegidos a toda la República Mexicana y envíos internacionales.",
+    "Envíos protegidos a en donde sea que estés.",
   phrase:
     "El arte viaja para habitar nuevos espacios.",
   route: "/arte/envios",
