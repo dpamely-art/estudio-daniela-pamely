@@ -1,6 +1,15 @@
 "use client";
 
+import { useState } from "react";
+import ConversationModal from "./ConversationModal";
+
 export default function HeroMuseo() {
+    const [openConversation, setOpenConversation] =
+  useState(false);
+  <ConversationModal
+  open={openConversation}
+  onClose={() => setOpenConversation(false)}
+/>
   return (
     <section
   className="
@@ -14,6 +23,22 @@ export default function HeroMuseo() {
     px-8
   "
 >
+      {/* Introducción */}
+
+      <button
+        onClick={() => setOpenConversation(true)}
+        style={{
+        background:"transparent",
+        border:"none",
+        cursor:"pointer",
+        padding:0,
+     }}
+    >
+
+       INTRODUCCIÓN
+
+</button>
+
       {/* Título */}
 
      <h1
