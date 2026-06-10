@@ -70,7 +70,7 @@ export default function NavigationMuseo() {
   {/* Botón móvil */}
 
 <button
-  className="block md:hidden"
+  className="hidden max-md:flex"
   onClick={() => setIsOpen(!isOpen)}
   style={{
     position: "absolute",
@@ -79,8 +79,6 @@ export default function NavigationMuseo() {
 
     width: "44px",
     height: "44px",
-
-    display: "flex",
 
     alignItems: "center",
     justifyContent: "center",
