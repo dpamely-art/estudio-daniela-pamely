@@ -54,7 +54,7 @@ export const collections = [
   number: "006",
   title: "Certificado de autenticidad",
   subtitle:
-    "Cada obra se entrega con un certificado firmado que acredita su originalidad.",
+    "Cada obra acredita su originalidad.",
   phrase:
     "Toda pieza forma parte del archivo del Estudio.",
   route: "/arte/certificado",
@@ -78,7 +78,7 @@ export const collections = [
   number: "008",
   title: "La obra llega a ti",
   subtitle:
-    "Realizamos envíos protegidos a toda la República Mexicana y envíos internacionales.",
+    "Envíos protegidos a toda la República Mexicana y envíos internacionales.",
   phrase:
     "El arte viaja para habitar nuevos espacios.",
   route: "/arte/envios",

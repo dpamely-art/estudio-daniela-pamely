@@ -1,19 +1,32 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import Link from "next/link";
 import { collections } from "../data/collections";
 
 export default function CarruselMuseo() {
   const [index, setIndex] = useState(0);
+  const [cardsToShow, setCardsToShow] = useState(5);
 
-  const visibleCards = useMemo(() => {
-    const total = collections.length;
+useEffect(() => {
+  
+  const update = () => {
+    if (window.innerWidth < 640) {
+      setCardsToShow(1);
+    } else if (window.innerWidth < 1024) {
+      setCardsToShow(3);
+    } else {
+      setCardsToShow(5);
+    }
+  };
 
-    return Array.from({ length: 5 }, (_, i) => {
-      return collections[(index + i) % total];
-    });
-  }, [index]);
+  update();
+
+  window.addEventListener("resize", update);
+
+  return () => window.removeEventListener("resize", update);
+}, []);
+
 
   const next = () => {
     setIndex((prev) => (prev + 1) % collections.length);
@@ -25,6 +38,14 @@ export default function CarruselMuseo() {
     );
   };
 
+  const visibleCards = useMemo(() => {
+  const total = collections.length;
+
+  return Array.from(
+    { length: cardsToShow },
+    (_, i) => collections[(index + i) % total]
+  );
+}, [index, cardsToShow]);
   return (
     <section
       style={{
@@ -52,8 +73,19 @@ export default function CarruselMuseo() {
             key={item.id}
             href={item.route}
             style={{
-              width:"clamp(180px,18vw,245px)",
-              height:"clamp(390px,38vw,545px)",
+              width:
+cardsToShow===1
+?"88vw"
+:cardsToShow===3
+?"30vw"
+:"245px",
+
+height:
+cardsToShow===1
+?"520px"
+:cardsToShow===3
+?"440px"
+:"545px",
               borderRadius: "14px",
               overflow: "hidden",
               background: "rgba(5,6,8,.55)",

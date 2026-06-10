@@ -76,17 +76,18 @@ export default function NavigationMuseo() {
                   key={item.href}
                   href={item.href}
                   className={`
-                    group
-                    relative
-                    transition-all
-                    duration-500
+  group
+  relative
+  overflow-visible
+  transition-all
+  duration-500
 
-                    ${
-                      active
-                        ? "text-[#D7A47C]"
-                        : "hover:text-[#D7A47C]"
-                    }
-                  `}
+  ${
+    active
+      ? "text-[#D7A47C]"
+      : "hover:text-[#D7A47C]"
+  }
+`}
                   style={{
                     marginRight:
                       index === menu.length - 1 ? 0 : 58,
@@ -117,32 +118,40 @@ export default function NavigationMuseo() {
                   />
 
                   <span
-                    className="
-                      absolute
-                      left-1/2
-                      -translate-x-1/2
-                      -top-8
+  className="
+    absolute
+    left-1/2
+    -translate-x-1/2
 
-                      w-24
-                      h-24
+    -top-40
 
-                      rounded-full
+    w-[340px]
+    h-[300px]
 
-                      bg-[#E8C3A0]/10
+    pointer-events-none
 
-                      blur-3xl
+    opacity-0
+    group-hover:opacity-100
 
-                      opacity-0
-
-                      group-hover:opacity-100
-
-                      transition-all
-                      duration-700
-                    "
-                  />
+    transition-all
+    duration-700
+  "
+  style={{
+  background:
+    `radial-gradient(
+      ellipse at top,
+      rgba(255,233,200,.55) 0%,
+      rgba(255,220,175,.28) 18%,
+      rgba(255,200,150,.12) 40%,
+      rgba(255,180,120,.05) 60%,
+      transparent 82%
+    )`,
+  filter: "blur(34px)",
+}}
+/>
                 </Link>
               );
-            })}
+              })}
           </div>
         </div>
       </nav>
