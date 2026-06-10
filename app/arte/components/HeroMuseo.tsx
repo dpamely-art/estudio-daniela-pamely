@@ -18,7 +18,7 @@ export default function HeroMuseo() {
 
      <h1
   style={{
-    fontSize: "clamp(42px, 8vw, 82px)",
+    fontSize: "clamp(42px, 7vw, 82px)",
     lineHeight: "0.95",
     fontWeight: 300,
     letterSpacing: "0.02em",
@@ -26,7 +26,7 @@ export default function HeroMuseo() {
     textAlign: "center",
     maxWidth: "980px",
     margin: "0 auto",
-    transform: "translateY(42px)",
+    transform: "translateY(clamp(10px,3vw,42px))",
     padding: "0 16px",
   }}
 >
@@ -38,10 +38,10 @@ export default function HeroMuseo() {
 
 <div
   style={{
-    width: "200px",
+    width: "clamp(120px,18vw,200px)",
     height: "1.5px",
     background: "#C46A4A",
-    marginTop: "100px",
+    marginTop: "clamp(50px,8vw,100px)",
   }}
 />
 
@@ -54,8 +54,8 @@ export default function HeroMuseo() {
     lineHeight: "1.8",
     fontWeight: 300,
     textAlign: "center",
-    maxWidth: "720px",
-    padding: "0 20px",
+    maxWidth: "760px",
+    padding: "0 24px",
   }}
 >
   Un museo virtual donde el arte y la historia
@@ -70,7 +70,7 @@ export default function HeroMuseo() {
       <div
   style={{
     width: "0.2px",
-    height: "50px",
+    height: "clamp(30px,5vw,50px)",
     background: "#C46A4A",
     marginTop: "10px",
     marginBottom: "10px",
@@ -83,9 +83,10 @@ export default function HeroMuseo() {
   className="
     mt-12
     flex
+    flex-wrap
     items-center
     justify-center
-    gap-20
+    gap-8
     uppercase
     tracking-[0.25em]
     text-[18px]

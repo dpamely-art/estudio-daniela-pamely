@@ -17,6 +17,9 @@ export default function FooterMuseo() {
         className="
           w-full
           max-w-[1600px]
+          px-6
+md:px-10
+xl:px-16
         "
       >
         {/* Línea */}
@@ -38,12 +41,14 @@ export default function FooterMuseo() {
 
             flex
             flex-col
-            lg:flex-row
+            md:flex-row
 
             justify-between
             items-end
 
-            gap-12
+            gap-6
+            md:gap-10
+            xl:gap-20
           "
         >
           {/* Marca */}
@@ -71,7 +76,9 @@ export default function FooterMuseo() {
 
                 leading-8
 
-                text-[15px]
+                text-[12px]
+                md:text-[14px]
+                xl:text-[15px]
 
                 max-w-md
               "
@@ -104,7 +111,7 @@ export default function FooterMuseo() {
 
             <br />
 
-            Ciudad de México · España
+            México · España · España
           </div>
         </div>
       </div>

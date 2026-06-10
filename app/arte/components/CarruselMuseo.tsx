@@ -43,7 +43,7 @@ export default function CarruselMuseo() {
           display: "flex",
           justifyContent: "center",
           alignItems: "flex-end",
-          gap: "14px",
+          gap:"clamp(8px,1vw,14px)",
           transition: "all .6s cubic-bezier(.22,.61,.36,1)",
         }}
       >
@@ -52,8 +52,8 @@ export default function CarruselMuseo() {
             key={item.id}
             href={item.route}
             style={{
-              width: "245px",
-              height: "545px",
+              width:"clamp(180px,18vw,245px)",
+              height:"clamp(390px,38vw,545px)",
               borderRadius: "14px",
               overflow: "hidden",
               background: "rgba(5,6,8,.55)",
@@ -95,7 +95,7 @@ export default function CarruselMuseo() {
                         <div
               style={{
                 width: "100%",
-                height: "380px",
+                height:"clamp(250px,27vw,380px)",
                 overflow: "hidden",
               }}
             >
@@ -137,7 +137,7 @@ export default function CarruselMuseo() {
                   style={{
                     marginTop: "12px",
                     color: "#E6DDD3",
-                    fontSize: "17px",
+                    fontSize:"clamp(14px,1.2vw,17px)",
                     fontWeight: 300,
                     lineHeight: "30px",
                   }}
@@ -149,7 +149,7 @@ export default function CarruselMuseo() {
                   style={{
                     marginTop: "10px",
                     color: "rgba(255,255,255,.60)",
-                    fontSize: "14px",
+                    fontSize:"clamp(12px,1vw,14px)",
                     lineHeight: "24px",
                   }}
                 >
@@ -161,7 +161,7 @@ export default function CarruselMuseo() {
                 style={{
                   marginTop: "8px",
                   color: "#C46A4A",
-                  fontSize: "12px",
+                  fontSize:"clamp(10px,.9vw,12px)",
                   letterSpacing: ".20em",
                   textTransform: "uppercase",
                 }}
