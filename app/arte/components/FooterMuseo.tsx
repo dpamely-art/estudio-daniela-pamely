@@ -111,7 +111,7 @@ xl:px-16
 
             <br />
 
-            México · España · España
+            México · España · USA
           </div>
         </div>
       </div>
