@@ -89,8 +89,11 @@ const current = slides[step];
         justifyContent: "center",
         alignItems: "center",
 
-        background: "rgba(3,6,12,.18)",
-        backdropFilter: "blur(10px)",
+        background:
+  "linear-gradient(rgba(3,6,12,.42), rgba(3,6,12,.42))",
+
+backdropFilter: "blur(18px)",
+WebkitBackdropFilter: "blur(18px)",
 
         zIndex: 500,
         padding: "24px",
@@ -98,23 +101,24 @@ const current = slides[step];
     >
       <div
         style={{
-          width: "min(760px,92vw)",
+          width: "min(780px,92vw)",
 
-          minHeight: "520px",
+          minHeight: "560px",
 
-          borderRadius: "26px",
+          borderRadius: "30px",
 
-          background:"linear-gradient(180deg,rgba(18,24,34,.62) 0%,rgba(9,13,20,.48) 100%)",
+          background:
+            "linear-gradient(180deg, rgba(20,28,42,.78) 0%, rgba(10,16,28,.72) 100%)",
 
-          backdropFilter: "blur(34px)",
+          backdropFilter: "blur(42px)",
 
-          border: "1px solid rgba(212,174,136,.28)",
+          border:
+            "1px solid rgba(212,174,136,.42)",
 
-          boxShadow:
-`
-0 40px 120px rgba(0,0,0,.45),
-0 0 0 1px rgba(255,255,255,.04),
-0 0 120px rgba(212,174,136,.08)
+          boxShadow: `
+0 50px 140px rgba(0,0,0,.45),
+0 0 0 1px rgba(255,255,255,.05),
+0 0 80px rgba(212,174,136,.10)
 `,
 
           position: "relative",
@@ -130,60 +134,163 @@ const current = slides[step];
         <button
           onClick={onClose}
           style={{
-            position: "absolute",
+  position: "absolute",
 
-            right: "22px",
-            top: "18px",
+  right: "30px",
+  top: "28px",
 
-            background: "transparent",
+  width: "42px",
+  height: "42px",
 
-            border: "none",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
 
-            color: "#D8AE88",
+  background: "transparent",
 
-            fontSize: "28px",
+  border: "1px solid rgba(212,174,136,.18)",
 
-            cursor: "pointer",
-          }}
+  borderRadius: "999px",
+
+  color: "#D8AE88",
+
+  fontSize: "20px",
+
+  cursor: "pointer",
+
+  transition: ".3s ease",
+}}
         >
           ✕
         </button>
 
-        <div>
+        <div
+  style={{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    flex: 1,
+    paddingTop: "28px",
+    paddingBottom: "28px",
+  }}
+>
 
           <h2
-            style={{
-              color: "#ECE3D9",
+  style={{
+    color: "#E8D5B2",
 
-              fontSize:
-                "clamp(28px,4vw,42px)",
+    fontSize:
+      "clamp(40px,5vw,56px)",
 
-              fontWeight: 300,
+    fontWeight: 300,
 
-              marginBottom: "22px",
-            }}
-          >
-            {current.title}
-          </h2>
+    textAlign: "center",
+
+    letterSpacing: ".01em",
+
+    marginBottom: "28px",
+  }}
+>
+  {current.title}
+</h2>
+
+<div
+  style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    gap: "14px",
+    marginBottom: "42px",
+  }}
+>
+  <div
+    style={{
+      width: "170px",
+      height: "1px",
+      background: "rgba(212,174,136,.45)",
+    }}
+  />
+
+  <div
+    style={{
+      width: "10px",
+      height: "10px",
+      borderRadius: "999px",
+      background: "#D8AE88",
+      boxShadow: "0 0 12px rgba(216,174,136,.5)",
+    }}
+  />
+
+  <div
+    style={{
+      width: "170px",
+      height: "1px",
+      background: "rgba(212,174,136,.45)",
+    }}
+  />
+</div>
 
           <p
-            style={{
-  color: "rgba(255,255,255,.82)",
+  style={{
+    color: "rgba(245,240,234,.92)",
 
-  fontSize:
-    "clamp(18px,2vw,22px)",
+    fontSize:
+      "clamp(21px,2.2vw,28px)",
 
-  lineHeight: 1.9,
+    lineHeight: 1.75,
 
-  whiteSpace: "pre-line",
-}}
-         >
+    fontWeight: 300,
+
+    textAlign: "center",
+
+    whiteSpace: "pre-line",
+
+    maxWidth: "640px",
+
+    margin: "0 auto",
+
+    letterSpacing: ".01em",
+  }}
+>
   {current.text}
 </p>
 
         </div>
 
           <button
+  style={{
+    alignSelf: "center",
+
+    marginTop: "42px",
+
+    minWidth: "260px",
+
+    height: "58px",
+
+    padding: "0 34px",
+
+    borderRadius: "999px",
+
+    border: "1px solid rgba(212,174,136,.75)",
+
+    background: "transparent",
+
+    color: "#E8D5B2",
+
+    fontSize: "15px",
+
+    letterSpacing: ".24em",
+
+    textTransform: "uppercase",
+
+    fontWeight: 300,
+
+    cursor: "pointer",
+
+    transition: ".35s ease",
+  }}
+
 onClick={() => {
 
 setVisible(false);
