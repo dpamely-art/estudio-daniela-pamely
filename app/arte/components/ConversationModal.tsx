@@ -101,14 +101,14 @@ WebkitBackdropFilter: "blur(18px)",
     >
       <div
         style={{
-          width: "min(780px,92vw)",
+          width: "min(700px,88vw)",
 
-          minHeight: "560px",
+          minHeight: "470px",
 
-          borderRadius: "30px",
+          borderRadius: "24px",
 
           background:
-            "linear-gradient(180deg, rgba(20,28,42,.78) 0%, rgba(10,16,28,.72) 100%)",
+"linear-gradient(180deg, rgba(20,28,42,.48) 0%, rgba(10,16,28,.42) 100%)",
 
           backdropFilter: "blur(42px)",
 
@@ -136,8 +136,8 @@ WebkitBackdropFilter: "blur(18px)",
           style={{
   position: "absolute",
 
-  right: "30px",
-  top: "28px",
+  right: "22px",
+  top: "20px",
 
   width: "42px",
   height: "42px",
@@ -171,8 +171,8 @@ WebkitBackdropFilter: "blur(18px)",
     justifyContent: "center",
     alignItems: "center",
     flex: 1,
-    paddingTop: "28px",
-    paddingBottom: "28px",
+    paddingTop: "6px",
+    paddingBottom: "6px",
   }}
 >
 
@@ -181,15 +181,15 @@ WebkitBackdropFilter: "blur(18px)",
     color: "#E8D5B2",
 
     fontSize:
-      "clamp(40px,5vw,56px)",
+      "clamp(30px,3.8vw,42px)",
 
     fontWeight: 300,
 
     textAlign: "center",
 
-    letterSpacing: ".01em",
+    letterSpacing: ".03em",
 
-    marginBottom: "28px",
+    marginBottom: "12px",
   }}
 >
   {current.title}
@@ -200,13 +200,13 @@ WebkitBackdropFilter: "blur(18px)",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    gap: "14px",
-    marginBottom: "42px",
+    gap: "10px",
+    marginBottom: "24px",
   }}
 >
   <div
     style={{
-      width: "170px",
+      width: "120px",
       height: "1px",
       background: "rgba(212,174,136,.45)",
     }}
@@ -214,8 +214,8 @@ WebkitBackdropFilter: "blur(18px)",
 
   <div
     style={{
-      width: "10px",
-      height: "10px",
+      width: "7px",
+      height: "7px",
       borderRadius: "999px",
       background: "#D8AE88",
       boxShadow: "0 0 12px rgba(216,174,136,.5)",
@@ -224,7 +224,7 @@ WebkitBackdropFilter: "blur(18px)",
 
   <div
     style={{
-      width: "170px",
+      width: "120px",
       height: "1px",
       background: "rgba(212,174,136,.45)",
     }}
@@ -236,21 +236,21 @@ WebkitBackdropFilter: "blur(18px)",
     color: "rgba(245,240,234,.92)",
 
     fontSize:
-      "clamp(21px,2.2vw,28px)",
+      "clamp(17px,1.8vw,21px)",
 
-    lineHeight: 1.75,
+    lineHeight: 1.45,
 
-    fontWeight: 300,
+    fontWeight: 200,
 
     textAlign: "center",
 
     whiteSpace: "pre-line",
 
-    maxWidth: "640px",
+    maxWidth: "560px",
 
     margin: "0 auto",
 
-    letterSpacing: ".01em",
+    letterSpacing: ".02em",
   }}
 >
   {current.text}
@@ -264,9 +264,9 @@ WebkitBackdropFilter: "blur(18px)",
 
     marginTop: "42px",
 
-    minWidth: "260px",
+    minWidth: "210px",
 
-    height: "58px",
+    height: "48px",
 
     padding: "0 34px",
 
@@ -278,9 +278,9 @@ WebkitBackdropFilter: "blur(18px)",
 
     color: "#E8D5B2",
 
-    fontSize: "15px",
+    fontSize: "12px",
 
-    letterSpacing: ".24em",
+    letterSpacing: ".32em",
 
     textTransform: "uppercase",
 
