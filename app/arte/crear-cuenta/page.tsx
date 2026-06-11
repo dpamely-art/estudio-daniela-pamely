@@ -65,7 +65,7 @@ export default function CrearCuentaPage() {
             items-start
 
             px-8
-            mt-28
+            -mt-24
           "
         >
           <div

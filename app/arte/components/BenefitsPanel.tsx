@@ -4,11 +4,12 @@ export default function BenefitsPanel() {
   return (
     <section
       className="
+      lg:translate-x-32
         flex
         flex-col
         justify-center
 
-        max-w-[500px]
+        max-w-[540px]
 
         px-8
       "

@@ -3,10 +3,13 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function LoginCard() {
+export default function RegisterCard() {
 
   const [showPassword, setShowPassword] =
-    useState(false);
+useState(false);
+
+  const [showConfirmPassword, setShowConfirmPassword] =
+useState(false);
 
   return (
     <section
@@ -95,7 +98,7 @@ export default function LoginCard() {
   marginBottom: "6px",
 }}
         >
-          Bienvenida/o
+          Crear cuenta
         </h2>
 
         <p
@@ -112,44 +115,113 @@ export default function LoginCard() {
 
   lineHeight: 1.45,
 
-  marginBottom: "20px",
+  marginBottom: "24px",
 }}
         >
-          Tu colección comienza
+          Comienza tu elección privada
           <br />
-          con este primer paso.
+          el museo te espera
         </p>
+
         <input
-          type="email"
-          placeholder="Nombre completo o artístico"
-          style={{
-            width: "100%",
-            height: "48px",
-            marginBottom: "16px",
-            padding: "0 18px",
+  type="email"
+  placeholder="Correo electrónico"
+  style={{
+    width: "100%",
+    height: "46px",
+    marginBottom: "16px",
+    padding: "0 18px",
 
-            background: "rgba(255,255,255,.06)",
+    background: "rgba(255,255,255,.06)",
 
-            border:
-              "1px solid rgba(255,255,255,.12)",
+    border:
+      "1px solid rgba(255,255,255,.12)",
 
-            borderRadius: "999px",
+    borderRadius: "999px",
 
-            color: "#ECE3D9",
+    color: "#ECE3D9",
 
-            outline: "none",
-          }}
-        />
+    outline: "none",
+  }}
+/>
 
-        <div
+<input
+  type="text"
+  placeholder="Nombre de usuario"
+  style={{
+    width: "100%",
+    height: "46px",
+    marginBottom: "16px",
+    padding: "0 18px",
+
+    background: "rgba(255,255,255,.06)",
+
+    border:
+      "1px solid rgba(255,255,255,.12)",
+
+    borderRadius: "999px",
+
+    color: "#ECE3D9",
+
+    outline: "none",
+  }}
+/>
+
+<div
+  style={{
+    position: "relative",
+    marginBottom: "16px",
+  }}
+>
+  <input
+    type={showPassword ? "text" : "password"}
+    placeholder="Contraseña"
+    style={{
+      width: "100%",
+      height: "48px",
+      padding: "0 52px 0 18px",
+
+      background: "rgba(255,255,255,.06)",
+
+      border:
+        "1px solid rgba(255,255,255,.12)",
+
+      borderRadius: "999px",
+
+      color: "#ECE3D9",
+
+      outline: "none",
+    }}
+  />
+
+  <button
+    type="button"
+    onClick={() => setShowPassword(!showPassword)}
+    style={{
+      position: "absolute",
+      right: "16px",
+      top: "50%",
+      transform: "translateY(-50%)",
+      background: "transparent",
+      border: "none",
+      color: "rgba(255,255,255,.72)",
+      cursor: "pointer",
+      fontSize: "18px",
+    }}
+  >
+    {showPassword ? "🙈" : "👁"}
+  </button>
+</div>
+
+<div
   style={{
     position: "relative",
     marginBottom: "18px",
   }}
 >
   <input
-    type={showPassword ? "text" : "password"}
-    placeholder="Correo electrónico"
+    type={showConfirmPassword ? "text" : "password"}
+    placeholder="Confirmar contraseña"
     style={{
       width: "100%",
       height: "48px",
@@ -171,48 +243,90 @@ export default function LoginCard() {
   <button
     type="button"
     onClick={() =>
-      setShowPassword(!showPassword)
+      setShowConfirmPassword(!showConfirmPassword)
     }
     style={{
       position: "absolute",
-
       right: "16px",
       top: "50%",
-
       transform: "translateY(-50%)",
-
       background: "transparent",
-
       border: "none",
-
       color: "rgba(255,255,255,.72)",
-
       cursor: "pointer",
-
       fontSize: "18px",
     }}
   >
-    {showPassword ? "🙈" : "👁"}
+    {showConfirmPassword ? "🙈" : "👁"}
   </button>
 </div>
-        <div
+
+       <div
   style={{
-    display: "flex",
-    justifyContent: "space-between",
-    alignItems: "center",
-
-    marginBottom: "22px",
-
-    fontSize: "14px",
+    marginBottom: "24px",
   }}
 >
   <label
     style={{
       display: "flex",
-      alignItems: "center",
+      alignItems: "flex-start",
       gap: "10px",
 
-      color: "rgba(255,255,255,.82)",
+      color: "rgba(255,255,255,.78)",
+
+      fontSize: "13px",
+
+      lineHeight: 1.5,
+
+      cursor: "pointer",
+    }}
+  >
+    <input
+      type="checkbox"
+      style={{
+        marginTop: "2px",
+
+        width: "16px",
+        height: "16px",
+
+        accentColor: "#D8AE88",
+
+        cursor: "pointer",
+      }}
+    />
+
+    <span>
+      Autorizo el tratamiento de mis datos y acepto los{" "}
+      <span
+        style={{
+          color: "#D8AE88",
+        }}
+      >
+        Términos y Condiciones
+      </span>{" "}
+      y la{" "}
+      <span
+        style={{
+          color: "#D8AE88",
+        }}
+      >
+        Política de Privacidad
+      </span>.
+    </span>
+  </label>
+
+  <label
+    style={{
+      display: "flex",
+      alignItems: "center",
+
+      gap: "10px",
+
+      marginTop: "12px",
+
+      color: "rgba(255,255,255,.62)",
+
+      fontSize: "13px",
 
       cursor: "pointer",
     }}
@@ -222,31 +336,18 @@ export default function LoginCard() {
       style={{
         width: "16px",
         height: "16px",
-        accentColor: "#CFA57C",
-        cursor: "pointer",
 
-    opacity: 0.82,
+        accentColor: "#D8AE88",
       }}
     />
 
-    Recordarme
+    Quiero recibir novedades, nuevas colecciones y experiencias del museo.
   </label>
-
-  <span
-    style={{
-      color: "#D8AE88",
-      cursor: "pointer",
-      fontSize: "12px",
-      letterSpacing: ".03em",
-    }}
-  >
-    Acepto términos y condiciones
-  </span>
 </div>
         <button
           style={{
             width: "100%",
-            height: "50px",
+            height: "48px",
 
             borderRadius: "999px",
 
@@ -257,9 +358,9 @@ export default function LoginCard() {
 
             color: "#111",
 
-            letterSpacing: ".22em",
+            letterSpacing: ".18em",
 
-            fontSize: "12px",
+            fontSize: "13px",
 
             fontWeight: 500,
 
@@ -311,7 +412,7 @@ export default function LoginCard() {
     <button
   style={{
     width: "100%",
-    height: "50px",
+    height: "48px",
 
     borderRadius: "999px",
 
@@ -325,7 +426,7 @@ export default function LoginCard() {
 
     fontSize: "12px",
 
-    fontWeight: 400,
+    fontWeight: 300,
 
     cursor: "pointer",
 
@@ -337,40 +438,43 @@ export default function LoginCard() {
 
      <div
   style={{
-    marginTop: "22px",
+    marginTop: "26px",
 
     textAlign: "center",
   }}
 >
   <div
     style={{
-      color: "rgba(255,255,255,.78)",
+      color: "rgba(255,255,255,.62)",
 
-      fontSize: "16px",
+      fontSize: "14px",
 
       fontWeight: 300,
 
-      marginBottom: "4px",
+      marginBottom: "10px",
     }}
   >
     ¿Ya formas parte del museo?
   </div>
 
-  <div
+  <Link
+    href="/arte/ingresar"
     style={{
-      color: "rgba(255,255,255,.55)",
+      color: "#D8AE88",
 
-      fontSize: "13px",
+      textDecoration: "none",
 
-      lineHeight: 1.6,
+      fontSize: "15px",
 
       fontWeight: 300,
+
+      letterSpacing: ".04em",
+
+      transition: ".35s",
     }}
   >
-    Inicia sesión para
-    <br />
-    continuar tu recorrido.
-  </div>
+    Entrar a mi colección →
+  </Link>
 </div>
 
       </div>
