@@ -4,7 +4,7 @@ import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
 import Link from "next/link";
 
-export default function OlvideContrasenaPage() {
+export default function RestablecerContrasenaPage() {
   return (
     <>
       <NavigationMuseo
@@ -92,9 +92,9 @@ export default function OlvideContrasenaPage() {
           marginBottom: "34px",
         }}
       >
-        Recuperar
+        Nueva
         <br />
-        acceso
+        contraseña
       </h1>
 
       <p
@@ -105,8 +105,8 @@ export default function OlvideContrasenaPage() {
           maxWidth: "520px",
         }}
       >
-        Algunas colecciones solo necesitan
-        volver a abrirse.
+        Algunas puertas solo necesitan
+        una nueva llave para volver a abrirse.
       </p>
 
     </div>
@@ -150,7 +150,7 @@ export default function OlvideContrasenaPage() {
       marginBottom: "10px",
     }}
   >
-    Recuperar acceso
+    Crear nueva contraseña
   </h2>
 
   <p
@@ -166,13 +166,36 @@ export default function OlvideContrasenaPage() {
       marginBottom: "34px",
     }}
   >
-    Escribe el correo electrónico con el
-    que ingresas al museo.
+    Define una nueva contraseña para proteger tu acceso al museo.
   </p>
 
    <input
-  type="email"
-  placeholder="Correo electrónico"
+  type="password"
+  placeholder="Nueva contraseña"
+  style={{
+    width: "100%",
+    height: "52px",
+
+    marginBottom: "22px",
+
+    padding: "0 18px",
+
+    background: "rgba(255,255,255,.06)",
+
+    border:
+      "1px solid rgba(255,255,255,.12)",
+
+    borderRadius: "999px",
+
+    color: "#ECE3D9",
+
+    outline: "none",
+  }}
+/>
+
+<input
+  type="password"
+  placeholder="Confirmar contraseña"
   style={{
     width: "100%",
     height: "52px",
@@ -195,7 +218,7 @@ export default function OlvideContrasenaPage() {
 />
 
 <Link
-  href="/arte/restablecer-contrasena"
+  href="/arte/acceso-restaurado"
   style={{
     textDecoration: "none",
     display: "block",
@@ -224,7 +247,7 @@ export default function OlvideContrasenaPage() {
       cursor: "pointer",
     }}
   >
-    ENVIAR ENLACE
+    ACTUALIZAR CONTRASEÑA
   </button>
 </Link>
 
@@ -244,8 +267,7 @@ export default function OlvideContrasenaPage() {
       lineHeight: 1.7,
     }}
   >
-    Recibirás un enlace seguro para
-    restablecer tu contraseña.
+    Una vez actualizada, las salas del museo volverán a estar abiertas para ti.
   </div>
 </div>
 

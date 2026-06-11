@@ -232,16 +232,18 @@ export default function LoginCard() {
     Recordarme
   </label>
 
-  <span
-    style={{
-      color: "#D8AE88",
-      cursor: "pointer",
-      fontSize: "12px",
-      letterSpacing: ".03em",
-    }}
-  >
-    ¿Olvidaste tu contraseña?
-  </span>
+  <Link
+  href="/arte/olvide-contrasena"
+  style={{
+    color: "#D8AE88",
+    cursor: "pointer",
+    fontSize: "12px",
+    letterSpacing: ".03em",
+    textDecoration: "none",
+  }}
+>
+  ¿Olvidaste tu contraseña?
+</Link>
 </div>
         <button
           style={{
@@ -308,32 +310,40 @@ export default function LoginCard() {
   />
 </div>
         
-    <button
+    <Link
+  href="/arte/crear-cuenta"
   style={{
-    width: "100%",
-    height: "50px",
-
-    borderRadius: "999px",
-
-    background: "transparent",
-
-    border: "1px solid rgba(216,174,136,.65)",
-
-    color: "#D8AE88",
-
-    letterSpacing: ".22em",
-
-    fontSize: "12px",
-
-    fontWeight: 400,
-
-    cursor: "pointer",
-
-    transition: ".35s",
+    textDecoration: "none",
+    display: "block",
   }}
 >
-  CREAR CUENTA
-</button>
+  <button
+    style={{
+      width: "100%",
+      height: "50px",
+
+      borderRadius: "999px",
+
+      background: "transparent",
+
+      border: "1px solid rgba(216,174,136,.65)",
+
+      color: "#D8AE88",
+
+      letterSpacing: ".22em",
+
+      fontSize: "12px",
+
+      fontWeight: 400,
+
+      cursor: "pointer",
+
+      transition: ".35s",
+    }}
+  >
+    CREAR CUENTA
+  </button>
+</Link>
 
      <div
   style={{

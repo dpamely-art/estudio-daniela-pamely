@@ -4,7 +4,7 @@ import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
 import Link from "next/link";
 
-export default function OlvideContrasenaPage() {
+export default function AccesoRestauradoPage() {
   return (
     <>
       <NavigationMuseo
@@ -92,9 +92,9 @@ export default function OlvideContrasenaPage() {
           marginBottom: "34px",
         }}
       >
-        Recuperar
+        Acceso
         <br />
-        acceso
+        restaurado
       </h1>
 
       <p
@@ -105,8 +105,7 @@ export default function OlvideContrasenaPage() {
           maxWidth: "520px",
         }}
       >
-        Algunas colecciones solo necesitan
-        volver a abrirse.
+        Las salas del museo vuelven a estar abiertas para ti.
       </p>
 
     </div>
@@ -150,7 +149,7 @@ export default function OlvideContrasenaPage() {
       marginBottom: "10px",
     }}
   >
-    Recuperar acceso
+    Acceso restaurado
   </h2>
 
   <p
@@ -166,41 +165,18 @@ export default function OlvideContrasenaPage() {
       marginBottom: "34px",
     }}
   >
-    Escribe el correo electrónico con el
-    que ingresas al museo.
-  </p>
-
-   <input
-  type="email"
-  placeholder="Correo electrónico"
-  style={{
-    width: "100%",
-    height: "52px",
-
-    marginBottom: "22px",
-
-    padding: "0 18px",
-
-    background: "rgba(255,255,255,.06)",
-
-    border:
-      "1px solid rgba(255,255,255,.12)",
-
-    borderRadius: "999px",
-
-    color: "#ECE3D9",
-
-    outline: "none",
-  }}
-/>
+     Tu contraseña ha sido actualizada correctamente.
+  <br />
+  Ahora puedes volver a recorrer las salas del museo.
+</p>
 
 <Link
-  href="/arte/restablecer-contrasena"
+  href="/arte/ingresar"
   style={{
     textDecoration: "none",
     display: "block",
   }}
->
+>   
   <button
     style={{
       width: "100%",
@@ -224,55 +200,9 @@ export default function OlvideContrasenaPage() {
       cursor: "pointer",
     }}
   >
-    ENVIAR ENLACE
+    INGRESAR AL MUSEO
   </button>
 </Link>
-
-<div
-  style={{
-    marginTop: "26px",
-
-    textAlign: "center",
-  }}
->
-  <div
-    style={{
-      color: "rgba(255,255,255,.58)",
-
-      fontSize: "14px",
-
-      lineHeight: 1.7,
-    }}
-  >
-    Recibirás un enlace seguro para
-    restablecer tu contraseña.
-  </div>
-</div>
-
-<div
-  style={{
-    marginTop: "28px",
-
-    textAlign: "center",
-  }}
->
-  <a
-    href="/arte/ingresar"
-    style={{
-      color: "#D8AE88",
-
-      textDecoration: "none",
-
-      fontSize: "16px",
-
-      fontWeight: 300,
-
-      letterSpacing: ".03em",
-    }}
-  >
-    ← Volver a ingresar
-  </a>
-</div>
 
 </div>
 
