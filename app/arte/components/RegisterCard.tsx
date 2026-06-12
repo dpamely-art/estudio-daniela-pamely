@@ -118,7 +118,7 @@ useState(false);
   marginBottom: "24px",
 }}
         >
-          Comienza tu elección privada
+          Comienza tu colección privada
           <br />
           el museo te espera
         </p>

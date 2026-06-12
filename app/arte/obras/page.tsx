@@ -1,178 +1,50 @@
-import Link from "next/link";
+"use client";
+
+import NavigationMuseo from "../components/NavigationMuseo";
+import FooterMuseo from "../components/FooterMuseo";
+import BreadcrumbMuseo from "../components/BreadcrumbMuseo";
+import ObraLayout from "../components/ObraLayout";
+import ObraGallery from "../components/ObraGallery";
+import ObraRightPanel from "../components/ObraRightPanel";
 
 export default function ObraPage() {
   return (
-    <main
-      className="
-        min-h-screen
+    <>
+      <NavigationMuseo
+        onOpenConversation={() => {}}
+      />
 
-        px-8
-        md:px-16
-        xl:px-24
+      <main
+  className="
+    relative
+    w-full
+    min-h-screen
+    flex
+    flex-col
+  "
+>
+        <BreadcrumbMuseo
+          href="/arte/colecciones"
+          label="Volver a colecciones"
+        />
 
-        pt-32
-        pb-24
+        <ObraLayout
+          left={
+            <ObraGallery
+              images={[
+  "/obras/magia/01.fixed.png",
+  "/obras/magia/02.fixed.png",
+  "/obras/magia/03.fixed.png",
+  "/obras/magia/04.fixed.png",
+  "/obras/magia/05.fixed.png",
+]}
+            />
+          }
+          right={<ObraRightPanel />}
+        />
 
-        flex
-        flex-col
-      "
-    >
-      {/* Obra */}
-
-      <section
-        className="
-          flex
-          justify-center
-          items-center
-
-          flex-1
-        "
-      >
-        <div
-          className="
-            w-full
-            max-w-5xl
-
-            aspect-[4/3]
-
-            rounded-3xl
-
-            border
-            border-white/10
-
-            bg-white/5
-
-            backdrop-blur-md
-
-            flex
-            items-center
-            justify-center
-          "
-        >
-          <p
-            className="
-              uppercase
-
-              tracking-[0.35em]
-
-              text-white/40
-            "
-          >
-            Obra
-          </p>
-        </div>
-      </section>
-
-      {/* Placa museográfica */}
-
-      <section
-        className="
-          mt-16
-
-          max-w-3xl
-        "
-      >
-        <p
-          className="
-            uppercase
-
-            tracking-[0.35em]
-
-            text-xs
-
-            text-[#D8AE88]
-          "
-        >
-          Linograbado
-        </p>
-
-        <h1
-          className="
-            mt-4
-
-            text-white
-
-            text-4xl
-            md:text-6xl
-
-            font-extralight
-          "
-        >
-          Título de la obra
-        </h1>
-
-        <p
-          className="
-            mt-10
-
-            text-white/70
-
-            leading-8
-
-            text-lg
-          "
-        >
-          Aquí aparecerá la historia de la obra,
-          el texto curatorial y el contexto que
-          acompaña la pieza.
-        </p>
-      </section>
-
-      {/* Acciones */}
-
-      <section
-        className="
-          mt-20
-
-          flex
-          flex-wrap
-
-          gap-6
-        "
-      >
-        <button
-          className="
-            uppercase
-
-            tracking-[0.30em]
-
-            text-xs
-
-            text-[#D8AE88]
-          "
-        >
-          Añadir a mi colección →
-        </button>
-
-        <button
-          className="
-            uppercase
-
-            tracking-[0.30em]
-
-            text-xs
-
-            text-white/60
-          "
-        >
-          Conocer su historia →
-        </button>
-
-        <Link
-          href="/arte/museo"
-          className="
-            uppercase
-
-            tracking-[0.30em]
-
-            text-xs
-
-            text-white/40
-          "
-        >
-          ← Volver al museo
-        </Link>
-      </section>
-    </main>
+        <FooterMuseo />
+      </main>
+    </>
   );
 }
