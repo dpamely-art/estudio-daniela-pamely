@@ -1,7 +1,7 @@
-export default function CertificadosPage() {
+export default function Page() {
   return (
     <main>
-      <h1>Certificados</h1>
+      Próximamente
     </main>
   );
 }
