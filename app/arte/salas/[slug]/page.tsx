@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { collections } from "../data/collections";
-import { artworks } from "../data/artworks";
+import { collections } from "../../data/collections";
+import { artworks } from "../../data/artworks";
 
 type Props = {
   params: {

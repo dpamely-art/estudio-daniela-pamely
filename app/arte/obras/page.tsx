@@ -61,8 +61,10 @@ export default function ObraPage() {
             }
             right={
   <ObraRightPanel
-    artwork={artwork}
-   onAdd={() => {
+   artwork={artwork}
+    onAdd={() => {
+  alert("CLICK");
+
   console.log("ENTRÓ AL onAdd");
 
   addWork({
@@ -72,9 +74,12 @@ export default function ObraPage() {
     price: `${artwork.price} ${artwork.currency}`,
     image: artwork.images[0],
   });
+
+  alert("ADDWORK EJECUTADO");
 }}
   />
 }
+
           />
         </section>
 
