@@ -6,8 +6,10 @@ import BreadcrumbMuseo from "../components/BreadcrumbMuseo";
 import ObraLayout from "../components/ObraLayout";
 import ObraGallery from "../components/ObraGallery";
 import ObraRightPanel from "../components/ObraRightPanel";
+import { artworks } from "../data/artworks";
 
 export default function ObraPage() {
+  const artwork = artworks[0];
   return (
     <>
       <NavigationMuseo
@@ -49,16 +51,14 @@ export default function ObraPage() {
           <ObraLayout
             left={
               <ObraGallery
-                images={[
-                  "/obras/magia/01.fixed.png",
-                  "/obras/magia/02.fixed.png",
-                  "/obras/magia/03.fixed.png",
-                  "/obras/magia/04.fixed.png",
-                  "/obras/magia/05.fixed.png",
-                ]}
-              />
+  images={artwork.images}
+/>
             }
-            right={<ObraRightPanel />}
+            right={
+  <ObraRightPanel
+    artwork={artwork}
+  />
+}
           />
         </section>
 

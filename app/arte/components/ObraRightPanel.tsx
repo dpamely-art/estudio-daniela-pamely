@@ -5,7 +5,13 @@ import ObraTechnicalSheet from "./ObraTechnicalSheet";
 import ObraInvestment from "./ObraInvestment";
 import ObraActions from "./ObraActions";
 
-export default function ObraRightPanel() {
+type Props = {
+  artwork: (typeof import("../data/artworks").artworks)[number];
+};
+
+export default function ObraRightPanel({
+  artwork,
+}: Props) {
   return (
     <div
       style={{
@@ -22,11 +28,10 @@ export default function ObraRightPanel() {
     >
       <div>
         <ObraInfoPanel
-          coleccion="MUJERES QUE INSPIRAN"
-          titulo="MAGIA"
-          edicion="001 / 004 · EDICIÓN LIMITADA"
-        />
-
+  coleccion={artwork.category}
+  titulo={artwork.title}
+  edicion={`${artwork.edition} · EDICIÓN LIMITADA`}
+/>
         
 
         <CuratorialText

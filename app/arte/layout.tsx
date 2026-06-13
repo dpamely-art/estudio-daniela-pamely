@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { MuseumProvider } from "./context/MuseumContext";
 
 type Props = {
   children: ReactNode;
@@ -42,8 +43,10 @@ export default function ArteLayout({ children }: Props) {
       {/* Contenido */}
 
       <div className="relative z-10">
-        {children}
-      </div>
+  <MuseumProvider>
+    {children}
+  </MuseumProvider>
+</div>
 
     </main>
   );
