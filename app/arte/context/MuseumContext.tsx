@@ -40,16 +40,20 @@ export function MuseumProvider({
     useState<Artwork[]>([]);
 
   function addWork(work: Artwork) {
-    setSelectedWorks((prev) => {
-      const exists = prev.some(
-        (item) => item.id === work.id
-      );
+  console.log("ADDWORK", work);
 
-      if (exists) return prev;
+  setSelectedWorks((prev) => {
+    console.log("PREV", prev);
 
-      return [...prev, work];
-    });
-  }
+    const exists = prev.some(
+      (item) => item.id === work.id
+    );
+
+    if (exists) return prev;
+
+    return [...prev, work];
+  });
+}
 
   function removeWork(id: string) {
     setSelectedWorks((prev) =>
@@ -60,7 +64,7 @@ export function MuseumProvider({
   function clearCollection() {
     setSelectedWorks([]);
   }
-
+console.log("selectedWorks =", selectedWorks);
   const value = useMemo(
     () => ({
       selectedWorks,
@@ -70,7 +74,7 @@ export function MuseumProvider({
     }),
     [selectedWorks]
   );
-
+console.log("selectedWorks =", selectedWorks);
   return (
     <MuseumContext.Provider value={value}>
       {children}

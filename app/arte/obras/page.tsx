@@ -7,9 +7,14 @@ import ObraLayout from "../components/ObraLayout";
 import ObraGallery from "../components/ObraGallery";
 import ObraRightPanel from "../components/ObraRightPanel";
 import { artworks } from "../data/artworks";
+import { useMuseum } from "../context/MuseumContext";
 
 export default function ObraPage() {
+
+  const { addWork } = useMuseum();
+
   const artwork = artworks[0];
+
   return (
     <>
       <NavigationMuseo
@@ -57,6 +62,17 @@ export default function ObraPage() {
             right={
   <ObraRightPanel
     artwork={artwork}
+   onAdd={() => {
+  console.log("ENTRÓ AL onAdd");
+
+  addWork({
+    id: artwork.id,
+    title: artwork.title,
+    collection: artwork.collection,
+    price: `${artwork.price} ${artwork.currency}`,
+    image: artwork.images[0],
+  });
+}}
   />
 }
           />

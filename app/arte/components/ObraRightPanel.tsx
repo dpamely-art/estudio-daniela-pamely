@@ -7,10 +7,12 @@ import ObraActions from "./ObraActions";
 
 type Props = {
   artwork: (typeof import("../data/artworks").artworks)[number];
+  onAdd: () => void;
 };
 
 export default function ObraRightPanel({
   artwork,
+  onAdd,
 }: Props) {
   return (
     <div
@@ -82,7 +84,9 @@ export default function ObraRightPanel({
           subtitle="Edición limitada · Certificado incluido"
         />
 
-        <ObraActions />
+        <ObraActions
+  onAdd={onAdd}
+/>
       </div>
     </div>
   );

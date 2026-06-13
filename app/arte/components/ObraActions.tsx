@@ -20,7 +20,10 @@ export default function ObraActions({
       }}
     >
       <button
-        onClick={onAdd}
+  onClick={() => {
+  alert("SI FUNCIONA");
+  onAdd?.();
+}}
         style={{
           width: "100%",
 
@@ -49,8 +52,11 @@ export default function ObraActions({
         Agregar a mi colección
       </button>
 
-      <button
-        onClick={onSave}
+     <button
+  onClick={() => {
+    console.log("CLICK BOTÓN");
+    onAdd?.();
+  }}
         style={{
           width: "100%",
 
