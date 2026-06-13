@@ -16,8 +16,8 @@ export default function ObraTechnicalSheet({
     <section
       style={{
         width: "100%",
-        maxWidth: "640px",
-        marginTop: "20px",
+        maxWidth: "520px",
+        marginTop: "6px",
       }}
     >
       <h3
@@ -48,7 +48,7 @@ export default function ObraTechnicalSheet({
 
             alignItems: "flex-start",
 
-            padding: "6px 0",
+            padding: "0px 0",
 
             borderBottom:
               "1px solid rgba(255,255,255,.05)",
@@ -58,7 +58,7 @@ export default function ObraTechnicalSheet({
             style={{
               color: "rgba(255,255,255,.55)",
 
-              fontSize: "14px",
+              fontSize: "13px",
             }}
           >
             {item.label}
@@ -68,7 +68,7 @@ export default function ObraTechnicalSheet({
             style={{
               color: "rgba(255,255,255,.86)",
 
-              fontSize: "14px",
+              fontSize: "13px",
 
               textAlign: "right",
 

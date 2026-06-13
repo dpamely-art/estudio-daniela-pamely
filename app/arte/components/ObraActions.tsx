@@ -10,13 +10,13 @@ export default function ObraActions({
   return (
     <section
       style={{
-        marginTop: "24px",
+        marginTop: "12px",
 
         display: "flex",
 
         flexDirection: "column",
 
-        gap: "10px",
+        gap: "8px",
       }}
     >
       <button
@@ -24,7 +24,7 @@ export default function ObraActions({
         style={{
           width: "100%",
 
-          height: "48px",
+          height: "40px",
 
           borderRadius: "999px",
 
@@ -54,7 +54,7 @@ export default function ObraActions({
         style={{
           width: "100%",
 
-          height: "48px",
+          height: "40px",
 
           borderRadius: "999px",
 
@@ -73,7 +73,7 @@ export default function ObraActions({
 
           cursor: "pointer",
 
-          fontWeight: 400,
+          fontWeight: 500,
         }}
       >
         Guardar en mi selección

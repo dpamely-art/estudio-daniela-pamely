@@ -10,9 +10,9 @@ export default function MuseumDivider() {
 
         alignItems: "center",
 
-        gap: "12px",
+        gap: "8px",
 
-        margin: "14px 0",
+        margin: "6px 0",
       }}
     >
       <div

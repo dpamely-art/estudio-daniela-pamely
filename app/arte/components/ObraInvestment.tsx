@@ -10,13 +10,13 @@ export default function ObraInvestment({
   return (
     <section
       style={{
-        marginTop: "24px",
+        marginTop: "10px",
       }}
     >
       <div
         style={{
           color: "#D8AE88",
-          fontSize: "12px",
+          fontSize: "14px",
           letterSpacing: ".30em",
           textTransform: "uppercase",
           marginBottom: "10px",
@@ -28,7 +28,7 @@ export default function ObraInvestment({
       <div
         style={{
           color: "#ECE3D9",
-          fontSize: "46px",
+          fontSize: "20px",
           fontWeight: 200,
           lineHeight: 1,
         }}
@@ -39,9 +39,9 @@ export default function ObraInvestment({
       {subtitle && (
         <div
           style={{
-            marginTop: "6px",
+            marginTop: "3px",
             color: "rgba(255,255,255,.60)",
-            fontSize: "15px",
+            fontSize: "10px",
             lineHeight: 1.5,
           }}
         >

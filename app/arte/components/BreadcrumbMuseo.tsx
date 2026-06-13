@@ -13,6 +13,11 @@ export default function BreadcrumbMuseo({
 }: BreadcrumbMuseoProps) {
   return (
     <div
+    style={{
+  position: "sticky",
+  top: "140px",
+  zIndex: 30,
+}}
       className="
         w-full
         flex

@@ -18,8 +18,8 @@ export default function ObraLayout({
         px-8
         lg:px-10
         xl:px-14
-        pt-6
-        pb-8
+        pt-4
+        pb-6
       "
     >
       <div
@@ -30,10 +30,10 @@ export default function ObraLayout({
 
           grid
           grid-cols-1
-          xl:grid-cols-[58%_42%]
+          xl:grid-cols-[60%_40%]
 
           gap-8
-          xl:gap-12
+          xl:gap-10
 
           items-start
         "
@@ -42,9 +42,8 @@ export default function ObraLayout({
         <div
           className="
             w-full
-
             xl:sticky
-            xl:top-24
+            xl:top-[170px]
 
             flex
             items-center
@@ -58,9 +57,11 @@ export default function ObraLayout({
         <div
           className="
             w-full
+            max-w-[500px]
 
             flex
             flex-col
+            justify-start
           "
         >
           {right}

@@ -18,30 +18,49 @@ export default function ObraPage() {
   className="
     relative
     w-full
-    min-h-screen
     flex
     flex-col
   "
+  style={{
+    paddingTop: "40px",
+  }}
 >
-        <BreadcrumbMuseo
-          href="/arte/colecciones"
-          label="Volver a colecciones"
-        />
+        <div
+          style={{
+            position: "sticky",
+            top: "40px",
+            zIndex: 20,
+          }}
+        >
+          <BreadcrumbMuseo
+            href="/arte/colecciones"
+            label="Volver a colecciones"
+          />
+        </div>
 
-        <ObraLayout
-          left={
-            <ObraGallery
-              images={[
-  "/obras/magia/01.fixed.png",
-  "/obras/magia/02.fixed.png",
-  "/obras/magia/03.fixed.png",
-  "/obras/magia/04.fixed.png",
-  "/obras/magia/05.fixed.png",
-]}
-            />
-          }
-          right={<ObraRightPanel />}
-        />
+        <section
+          style={{
+            flex: 1,
+            minHeight: "calc(100vh - 170px)",
+            display: "flex",
+            alignItems: "flex-start",
+          }}
+        >
+          <ObraLayout
+            left={
+              <ObraGallery
+                images={[
+                  "/obras/magia/01.fixed.png",
+                  "/obras/magia/02.fixed.png",
+                  "/obras/magia/03.fixed.png",
+                  "/obras/magia/04.fixed.png",
+                  "/obras/magia/05.fixed.png",
+                ]}
+              />
+            }
+            right={<ObraRightPanel />}
+          />
+        </section>
 
         <FooterMuseo />
       </main>

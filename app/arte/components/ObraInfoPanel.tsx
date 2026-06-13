@@ -37,13 +37,13 @@ export default function ObraInfoPanel({
 
       <h1
         style={{
-          marginTop: "6px",
+          marginTop: "2px",
 
-          marginBottom: "8px",
+          marginBottom: "2px",
 
           color: "#ECE3D9",
 
-          fontSize: "58px",
+          fontSize: "46px",
 
           lineHeight: ".90",
 
@@ -57,28 +57,16 @@ export default function ObraInfoPanel({
         style={{
           color: "rgba(255,255,255,.58)",
 
-          fontSize: "14px",
+          fontSize: "10px",
 
-          letterSpacing: ".18em",
+          letterSpacing: ".22em",
 
           textTransform: "uppercase",
         }}
       >
         {edicion}
       </span>
-
-      <div
-        style={{
-          marginTop: "10px",
-
-          width: "100%",
-
-          height: "1px",
-
-          background:
-            "rgba(255,255,255,.10)",
-        }}
-      />
+      
     </section>
   );
 }
