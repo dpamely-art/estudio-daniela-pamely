@@ -6,6 +6,7 @@ import {
   useMemo,
   useState,
   ReactNode,
+  useEffect,
 } from "react";
 
 export type Artwork = {
@@ -39,19 +40,35 @@ export function MuseumProvider({
   const [selectedWorks, setSelectedWorks] =
     useState<Artwork[]>([]);
 
-  function addWork(work: Artwork) {
-  setSelectedWorks((prev) => {
-    const exists = prev.some(
-      (item) => item.id === work.id
-    );
+  useEffect(() => {
+    const saved =
+      localStorage.getItem("museum-selection");
 
-    if (exists) {
-      return prev;
+    if (saved) {
+      setSelectedWorks(JSON.parse(saved));
     }
+  }, []);
 
-    return [...prev, work];
-  });
-}
+  useEffect(() => {
+    localStorage.setItem(
+      "museum-selection",
+      JSON.stringify(selectedWorks)
+    );
+  }, [selectedWorks]);
+
+  function addWork(work: Artwork) {
+    setSelectedWorks((prev) => {
+      const exists = prev.some(
+        (item) => item.id === work.id
+      );
+
+      if (exists) {
+        return prev;
+      }
+
+      return [...prev, work];
+    });
+  }
 
   function removeWork(id: string) {
     setSelectedWorks((prev) =>
