@@ -1,20 +1,24 @@
 "use client";
 
-import NavigationMuseo from "../components/NavigationMuseo";
-import FooterMuseo from "../components/FooterMuseo";
-import BreadcrumbMuseo from "../components/BreadcrumbMuseo";
-import ObraLayout from "../components/ObraLayout";
-import ObraGallery from "../components/ObraGallery";
-import ObraRightPanel from "../components/ObraRightPanel";
-import { artworks } from "../data/artworks";
+import NavigationMuseo from "./NavigationMuseo";
+import FooterMuseo from "./FooterMuseo";
+import BreadcrumbMuseo from "./BreadcrumbMuseo";
+import ObraLayout from "./ObraLayout";
+import ObraGallery from "./ObraGallery";
+import ObraRightPanel from "./ObraRightPanel";
 import { useMuseum } from "../context/MuseumContext";
+import { useState } from "react";
+import ToastMuseo from "./ToastMuseo";
 
-export default function ObraPage() {
+type Props = {
+  artwork: any;
+};
 
-  const { addWork } = useMuseum();
-
-  const artwork = artworks[0];
-
+export default function ObraDetailClient({
+  artwork,
+}: Props) {
+    const { addWork } = useMuseum();
+    const [showToast, setShowToast] = useState(false);
   return (
     <>
       <NavigationMuseo
@@ -22,16 +26,16 @@ export default function ObraPage() {
       />
 
       <main
-  className="
-    relative
-    w-full
-    flex
-    flex-col
-  "
-  style={{
-    paddingTop: "40px",
-  }}
->
+        className="
+          relative
+          w-full
+          flex
+          flex-col
+        "
+        style={{
+          paddingTop: "40px",
+        }}
+      >
         <div
           style={{
             position: "sticky",
@@ -56,12 +60,12 @@ export default function ObraPage() {
           <ObraLayout
             left={
               <ObraGallery
-  images={artwork.images}
-/>
+                images={artwork.images}
+              />
             }
-            right={
+           right={
   <ObraRightPanel
-   artwork={artwork}
+    artwork={artwork}
     onAdd={() => {
   addWork({
     id: artwork.id,
@@ -70,13 +74,22 @@ export default function ObraPage() {
     price: `${artwork.price} ${artwork.currency}`,
     image: artwork.images[0],
   });
+
+  setShowToast(true);
+
+  setTimeout(() => {
+    setShowToast(false);
+  }, 3000);
 }}
   />
 }
-
           />
         </section>
-
+        <ToastMuseo
+  visible={showToast}
+  title={artwork.title}
+  subtitle="La obra fue incorporada correctamente a tu selección."
+/>
         <FooterMuseo />
       </main>
     </>

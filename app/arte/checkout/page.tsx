@@ -3,9 +3,20 @@
 import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
 import { useMuseum } from "../context/MuseumContext";
+import CheckoutSummary from "../components/CheckoutSummary";
 
 export default function CheckoutPage() {
   const { selectedWorks } = useMuseum();
+
+const total = selectedWorks.reduce(
+  (sum, work) =>
+    sum +
+    Number(
+      work.price.replace(/[^\d]/g, "")
+    ),
+  0
+);
+
   return (
     <>
       <NavigationMuseo
@@ -24,8 +35,8 @@ export default function CheckoutPage() {
         <section
   style={{
     display: "grid",
-    gridTemplateColumns: "1.6fr .8fr",
-    gap: "70px",
+    gridTemplateColumns: "minmax(0,1.7fr) 420px",
+    gap: "80px",
     marginTop: "50px",
     alignItems: "start",
   }}
@@ -33,6 +44,9 @@ export default function CheckoutPage() {
   <div>
     <span
       style={{
+        position: "sticky",
+        top: "140px",
+
         color: "#D8AE88",
         fontSize: "12px",
         letterSpacing: ".35em",
@@ -115,16 +129,10 @@ export default function CheckoutPage() {
 )}
   </div>
 
- <div
-  style={{
-    color: "#D8AE88",
-    letterSpacing: ".22em",
-    textTransform: "uppercase",
-    fontSize: "12px",
-  }}
->
-  Resumen
-</div>
+ <CheckoutSummary
+  total={total}
+  works={selectedWorks.length}
+/>
 
 <div
   style={{

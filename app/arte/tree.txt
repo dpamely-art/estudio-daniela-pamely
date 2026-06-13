@@ -1,0 +1,105 @@
+Listado de rutas de carpetas para el volumen Windows-SSD
+El número de serie del volumen es 00000021 D421:F24E
+C:.
+¦   layout.tsx
+¦   page.tsx
+¦   tree.txt
+¦   
++---acceso-restaurado
+¦       page.tsx
+¦       
++---certificados
+¦       page.tsx
+¦       
++---checkout
+¦       page.tsx
+¦       
++---coleccion
+¦       page.tsx
+¦       
++---components
+¦       BenefitsPanel.tsx
+¦       BreadcrumbMuseo.tsx
+¦       CarruselMuseo.tsx
+¦       ConversationModal.tsx
+¦       CuratorialText.tsx
+¦       FooterMuseo.tsx
+¦       HeroCrearCuenta.tsx
+¦       HeroIngresar.tsx
+¦       HeroMuseo.tsx
+¦       LoginCard.tsx
+¦       MuseumDivider.tsx
+¦       NavigationMuseo.tsx
+¦       ObraActions.tsx
+¦       ObraBenefits.tsx
+¦       ObraGallery.tsx
+¦       ObraInfoPanel.tsx
+¦       ObraInvestment.tsx
+¦       ObraLayout.tsx
+¦       ObraRightPanel.tsx
+¦       ObraTechnicalSheet.tsx
+¦       RegisterCard.tsx
+¦       
++---comunidad
+¦       page.tsx
+¦       
++---context
+¦       MuseumContext.tsx
+¦       
++---crear-cuenta
+¦       page.tsx
+¦       
++---data
+¦       artworks.ts
+¦       collections.ts
+¦       
++---experiencias
+¦       page.tsx
+¦       
++---historial
+¦       page.tsx
+¦       
++---ingresar
+¦       page.tsx
+¦       
++---legacy
++---mi-coleccion
+¦       page.tsx
+¦       
++---mi-perfil
+¦       page.tsx
+¦       
++---modals
+¦       ConversationModal.tsx
+¦       
++---museo
+¦       page.tsx
+¦       
++---obras
+¦       page.tsx
+¦       [slug]
+¦       
++---olvide-contrasena
+¦       page.tsx
+¦       
++---perfil
+¦       page.tsx
+¦       
++---proximas-colecciones
+¦       page.tsx
+¦       
++---restablecer-contrasena
+¦       page.tsx
+¦       
++---salas
+¦   ¦   page.tsx
+¦   ¦   
+¦   +---[slug]
+¦           page.tsx
+¦           
++---suscripcion
+¦       page.tsx
+¦       
++---taller
+        page.tsx
+        

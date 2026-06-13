@@ -37,42 +37,46 @@ export default function ObraRightPanel({
         
 
         <CuratorialText
-          text={`La serie Magia explora la relación entre los símbolos cotidianos y los rituales íntimos. Cada pieza propone una lectura donde el objeto doméstico adquiere un carácter ceremonial, invitando a contemplar la memoria, el habitar y la sensibilidad desde una perspectiva profundamente humana.`}
-        />
+  text={artwork.description}
+/>
 
         <MuseumDivider />
 
         <ObraTechnicalSheet
           items={[
-            {
-              label: "Técnica",
-              value: "Linograbado",
-            },
-            {
-              label: "Soporte",
-              value: "Papel algodón 300 g",
-            },
-            {
-              label: "Medidas",
-              value: "21 × 29.7 cm",
-            },
-            {
-              label: "Edición",
-              value: "Limitada a 50 piezas",
-            },
-            {
-              label: "Año",
-              value: "2026",
-            },
-            {
-              label: "Certificado",
-              value: "Incluido",
-            },
-            {
-              label: "Firma",
-              value: "A mano por la artista",
-            },
-          ]}
+  {
+    label: "Técnica",
+    value: artwork.technique,
+  },
+  {
+    label: "Soporte",
+    value: artwork.support,
+  },
+  {
+    label: "Medidas",
+    value: artwork.measures,
+  },
+  {
+    label: "Edición",
+    value: artwork.editionDescription,
+  },
+  {
+  label: "Año",
+  value: `${artwork.year}`,
+},
+  {
+    label: "Certificado",
+    value: artwork.certificate
+      ? "Incluido"
+      : "No incluido",
+  },
+  {
+    label: "Firma",
+    value: artwork.signed
+      ? "A mano por la artista"
+      : "Sin firma",
+  },
+]}
         />
       </div>
 
@@ -80,9 +84,9 @@ export default function ObraRightPanel({
         <MuseumDivider />
 
         <ObraInvestment
-          price="$2,850 MXN"
-          subtitle="Edición limitada · Certificado incluido"
-        />
+  price={`$${artwork.price.toLocaleString()} ${artwork.currency}`}
+  subtitle="Edición limitada · Certificado incluido"
+/>
 
         <ObraActions
   onAdd={onAdd}

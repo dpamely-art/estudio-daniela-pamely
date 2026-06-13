@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useMuseum } from "../context/MuseumContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -40,6 +41,7 @@ export default function NavigationMuseo({
 }: NavigationMuseoProps) {
   
   const pathname = usePathname();
+  const { selectedWorks } = useMuseum();
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -150,7 +152,13 @@ export default function NavigationMuseo({
                       index === menu.length - 1 ? 0 : 58,
                   }}
                 >
-                  <span>{item.title}</span>
+                  <span>
+  {item.title}
+
+  {item.title === "MI SELECCIÓN" &&
+    selectedWorks.length > 0 &&
+    ` (${selectedWorks.length})`}
+</span>
 
                   <span
                     className={`
