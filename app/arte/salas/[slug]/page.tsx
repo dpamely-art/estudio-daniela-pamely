@@ -130,26 +130,65 @@ export default function SalaPage({
             <Link
               key={work.id}
               href={`/arte/obras/${work.id}`}
-              style={{
-                textDecoration: "none",
-                color: "inherit",
-              }}
+              className="
+    group
+    transition-all
+    duration-500
+  "
+  style={{
+    textDecoration: "none",
+    color: "inherit",
+  }}
             >
               <div
+                className="
+                relative
+                transition-all
+                duration-500
+                group-hover:-translate-y-2
+                group-hover:scale-[1.01]
+              "
                 style={{
                   cursor: "pointer",
                 }}
-              >
+>
                 <img
+
+                  className="
+                  transition-all
+                  duration-700
+                  group-hover:scale-[1.03]
+                  group-hover:shadow-2xl
+                "
                   src={work.images[0]}
+                  
                   alt={work.title}
                   style={{
                     width: "100%",
                     aspectRatio: "1",
                     objectFit: "cover",
                     borderRadius: "26px",
+                    boxShadow:
+                      "0 18px 45px rgba(0,0,0,.22)",
                   }}
                 />
+
+                <div
+                      className="
+                        absolute
+                        inset-0
+                        rounded-[26px]
+                        pointer-events-none
+                        opacity-0
+                        group-hover:opacity-100
+                        transition-all
+                        duration-700
+                      "
+                      style={{
+                        background:
+                          "radial-gradient(circle at center, rgba(216,174,136,.10), transparent 70%)",
+                      }}
+                    />
 
                 <div
                   style={{
@@ -164,6 +203,12 @@ export default function SalaPage({
                 </div>
 
                 <div
+                  className="
+                  transition-all
+                  duration-500
+                  group-hover:text-[#D8AE88]
+               "
+
                   style={{
                     marginTop: "8px",
                     fontSize: "38px",
