@@ -4,6 +4,7 @@ import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
 import { useMuseum } from "../context/MuseumContext";
 import CheckoutSummary from "../components/CheckoutSummary";
+import CheckoutActions from "../components/CheckoutActions";
 
 export default function CheckoutPage() {
   const { selectedWorks } = useMuseum();
@@ -64,22 +65,23 @@ const total = selectedWorks.reduce(
         marginBottom: "18px",
       }}
     >
-      Mi selección
+      Proceso de incorporación
     </h1>
 
     <p
-      style={{
-        color: "rgba(255,255,255,.68)",
-        fontSize: "18px",
-        lineHeight: 1.8,
-        maxWidth: "720px",
-      }}
-    >
-      Estás a punto de incorporar estas obras a tu
-      colección. Antes de continuar revisaremos cada
-      pieza y prepararemos el proceso de adquisición.
-    </p>
-
+  style={{
+    color: "rgba(255,255,255,.68)",
+    fontSize: "18px",
+    lineHeight: 1.8,
+    maxWidth: "720px",
+  }}
+>
+  Has decidido incorporar las siguientes obras al
+  archivo de tu colección. Antes de continuar, el
+  Museo verificará cada pieza, su certificado de
+  autenticidad y preparará el proceso de
+  incorporación.
+</p>
     {selectedWorks.length === 0 ? (
   <div
     style={{
@@ -108,22 +110,67 @@ const total = selectedWorks.reduce(
       </div>
 
       <div
-        style={{
-          marginTop: "6px",
-          color: "rgba(255,255,255,.6)",
-        }}
-      >
-        {work.collection}
-      </div>
+  style={{
+    marginTop: "14px",
+    display: "flex",
+    flexDirection: "column",
+    gap: "8px",
+    color: "rgba(255,255,255,.62)",
+    fontSize: "14px",
+  }}
+>
+  <div>
+    <strong
+      style={{
+        color: "#D8AE88",
+        fontWeight: 400,
+      }}
+    >
+      Colección:
+    </strong>{" "}
+    {work.collection}
+  </div>
+
+  <div>
+    <strong
+      style={{
+        color: "#D8AE88",
+        fontWeight: 400,
+      }}
+    >
+      Estado:
+    </strong>{" "}
+    Reservada para incorporación
+  </div>
+</div>
 
       <div
-        style={{
-          marginTop: "10px",
-          color: "#D8AE88",
-        }}
-      >
-        {work.price}
-      </div>
+  style={{
+    marginTop: "14px",
+  }}
+>
+  <div
+    style={{
+      color: "#D8AE88",
+      fontSize: "12px",
+      letterSpacing: ".18em",
+      textTransform: "uppercase",
+    }}
+  >
+    Inversión
+  </div>
+
+  <div
+    style={{
+      marginTop: "6px",
+      fontSize: "22px",
+      fontWeight: 300,
+      color: "#ECE3D9",
+    }}
+  >
+    {work.price}
+  </div>
+</div>
     </div>
   ))
 )}
@@ -133,84 +180,11 @@ const total = selectedWorks.reduce(
   total={total}
   works={selectedWorks.length}
 />
+   
+    <CheckoutActions
+  disabled={selectedWorks.length === 0}
+/>
 
-<div
-  style={{
-    marginTop: "30px",
-    display: "flex",
-    flexDirection: "column",
-    gap: "18px",
-  }}
->
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-    }}
-  >
-    <span
-      style={{
-        color: "rgba(255,255,255,.6)",
-      }}
-    >
-      Obras
-    </span>
-
-    <span>
-      {selectedWorks.length}
-    </span>
-  </div>
-
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-    }}
-  >
-    <span
-      style={{
-        color: "rgba(255,255,255,.6)",
-      }}
-    >
-      Certificado
-    </span>
-
-    <span>
-      Incluido
-    </span>
-  </div>
-
-  <hr
-    style={{
-      border: 0,
-      borderTop:
-        "1px solid rgba(255,255,255,.08)",
-    }}
-  />
-
-  <div
-    style={{
-      display: "flex",
-      justifyContent: "space-between",
-      fontSize: "26px",
-      fontWeight: 200,
-    }}
-  >
-    <span>Total</span>
-
-    <span>
-      {selectedWorks.reduce(
-        (sum, work) =>
-          sum +
-          Number(
-            work.price.replace(/[^\d]/g, "")
-          ),
-        0
-      ).toLocaleString()}{" "}
-      MXN
-    </span>
-  </div>
-</div>
 </section>
       </main>
 

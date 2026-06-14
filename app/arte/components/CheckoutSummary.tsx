@@ -100,17 +100,34 @@ export default function CheckoutSummary({
       </div>
 
       <div
-        style={{
-          marginTop: "28px",
-          color: "rgba(255,255,255,.55)",
-          lineHeight: 1.8,
-          fontSize: "14px",
-        }}
-      >
-        Las obras permanecerán reservadas
-        durante el proceso de incorporación
-        a tu colección.
-      </div>
+  style={{
+    marginTop: "30px",
+    color: "rgba(255,255,255,.55)",
+    lineHeight: 1.9,
+    fontSize: "14px",
+  }}
+>
+  Al continuar, el Estudio verificará la
+  disponibilidad de las obras, registrará
+  sus certificados de autenticidad e
+  iniciará formalmente el proceso de
+  incorporación a tu colección.
+</div>
+
+      <div
+  style={{
+    marginTop: "26px",
+    paddingTop: "22px",
+    borderTop: "1px solid rgba(255,255,255,.08)",
+    color: "#D8AE88",
+    fontSize: "11px",
+    letterSpacing: ".22em",
+    textTransform: "uppercase",
+    textAlign: "center",
+  }}
+>
+  Estudio Daniela Pamely
+</div>
 
       <button
         style={{
