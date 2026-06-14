@@ -5,9 +5,33 @@ import FooterMuseo from "../components/FooterMuseo";
 import { useMuseum } from "../context/MuseumContext";
 import CheckoutSummary from "../components/CheckoutSummary";
 import CheckoutActions from "../components/CheckoutActions";
+import { useEffect, useState } from "react";
+import PaymentSelector from "../components/PaymentSelector";
+import ProcessingIncorporation from "../components/ProcessingIncorporation";
 
 export default function CheckoutPage() {
   const { selectedWorks } = useMuseum();
+
+  const [paymentMethod, setPaymentMethod] =
+  useState<"apple" | "mercadopago">(
+    "apple"
+  );
+
+  const [processing, setProcessing] =
+  useState(false);
+
+  const [ready, setReady] =
+  useState(false);
+
+  useEffect(() => {
+  if (!processing) return;
+
+  const timer = setTimeout(() => {
+    setReady(true);
+  }, 2000);
+
+  return () => clearTimeout(timer);
+}, [processing]);
 
 const total = selectedWorks.reduce(
   (sum, work) =>
@@ -183,7 +207,70 @@ const total = selectedWorks.reduce(
    
     <CheckoutActions
   disabled={selectedWorks.length === 0}
+  ready={ready}
+  onContinue={() =>
+    setProcessing(true)
+  }
 />
+
+    <PaymentSelector
+  method={paymentMethod}
+  onChange={setPaymentMethod}
+/>
+
+   <>
+  <ProcessingIncorporation
+    visible={processing && !ready}
+  />
+
+  {ready && (
+    <div
+      style={{
+        marginTop: "34px",
+        padding: "28px",
+        borderRadius: "22px",
+        background:
+          "linear-gradient(180deg,#11141A,#0A0C10)",
+        border:
+          "1px solid rgba(216,174,136,.18)",
+      }}
+    >
+      <div
+        style={{
+          color: "#D8AE88",
+          fontSize: "11px",
+          letterSpacing: ".22em",
+          textTransform: "uppercase",
+        }}
+      >
+        Incorporación preparada
+      </div>
+
+      <div
+        style={{
+          marginTop: "18px",
+          fontSize: "28px",
+          fontWeight: 200,
+        }}
+      >
+        ✅ Tu expediente ha sido generado
+      </div>
+
+      <div
+        style={{
+          marginTop: "18px",
+          color: "rgba(255,255,255,.62)",
+          lineHeight: 1.8,
+        }}
+      >
+        El Museo ha reservado la edición y
+        preparado el proceso para continuar
+        con el método de incorporación
+        seleccionado.
+      </div>
+    </div>
+  )}
+</>
 
 </section>
       </main>

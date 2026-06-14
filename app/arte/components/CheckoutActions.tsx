@@ -1,9 +1,13 @@
 type Props = {
   disabled?: boolean;
+  ready?: boolean;
+  onContinue?: () => void;
 };
 
 export default function CheckoutActions({
   disabled = false,
+  ready = false,
+  onContinue,
 }: Props) {
   return (
     <div
@@ -15,7 +19,12 @@ export default function CheckoutActions({
       }}
     >
       <button
-        disabled={disabled}
+  disabled={disabled}
+  onClick={() => {
+    if (!disabled) {
+      onContinue?.();
+    }
+  }}
         style={{
           width: "100%",
           height: "58px",
@@ -33,7 +42,9 @@ export default function CheckoutActions({
           fontWeight: 500,
         }}
       >
-         Continuar con Apple Pay
+        {ready
+  ? "🍎 Continuar a Apple Pay"
+  : " Iniciar incorporación"}
       </button>
 
       <div
