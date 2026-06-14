@@ -7,7 +7,7 @@ import FooterMuseo from "../components/FooterMuseo";
 import Obras from "../components/Obras";
 import Link from "next/link";
 import Dashboard from "../components/Dashboard";
-
+import NuevaObra from "../components/NuevaObra";
 
 export default function MiPerfilPage() {
 const [activeModule, setActiveModule] =
@@ -339,6 +339,9 @@ padding: "14px 12px",
 
    {activeModule === "obras" && (
   <Obras />
+)}
+   {activeModule === "nuevaObra" && (
+  <NuevaObra />
 )}
 
   </main>
