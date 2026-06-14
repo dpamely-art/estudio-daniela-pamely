@@ -23,12 +23,19 @@ export default function CheckoutPage() {
   const [ready, setReady] =
   useState(false);
 
+  const [completed, setCompleted] =
+  useState(false);
+
   useEffect(() => {
   if (!processing) return;
 
   const timer = setTimeout(() => {
     setReady(true);
+  
+    setTimeout(() => {
+    setCompleted(true);
   }, 2000);
+}, 2000);
 
   return () => clearTimeout(timer);
 }, [processing]);
@@ -223,7 +230,7 @@ const total = selectedWorks.reduce(
     visible={processing && !ready}
   />
 
-  {ready && (
+  {ready && !completed && (
     <div
       style={{
         marginTop: "34px",
@@ -271,6 +278,102 @@ const total = selectedWorks.reduce(
     </div>
   )}
 </>
+
+       {completed && (
+  <div
+    style={{
+      marginTop: "34px",
+      padding: "34px",
+      borderRadius: "22px",
+      background:
+        "linear-gradient(180deg,#11141A,#0A0C10)",
+      border:
+        "1px solid rgba(216,174,136,.18)",
+      textAlign: "center",
+    }}
+  >
+    <div
+      style={{
+        color: "#D8AE88",
+        fontSize: "11px",
+        letterSpacing: ".22em",
+        textTransform: "uppercase",
+      }}
+    >
+      Incorporación confirmada
+    </div>
+
+    <div
+      style={{
+        marginTop: "18px",
+        fontSize: "34px",
+        fontWeight: 200,
+      }}
+    >
+      🏛️ Incorporación preparada
+
+
+    </div>
+
+    <div
+      style={{
+        marginTop: "22px",
+        color: "rgba(255,255,255,.66)",
+        lineHeight: 1.9,
+      }}
+    >
+      <>
+  Tu expediente ha sido preparado y la
+  obra ha iniciado formalmente su proceso
+  de incorporación al Archivo del
+  Estudio Daniela Pamely.
+
+  <br />
+  <br />
+
+  📜 Certificado de autenticidad:
+  preparado.
+
+  <br />
+  <br />
+
+  📦 Próximo paso:
+  continuar con el método de
+  incorporación seleccionado.
+</>
+
+<div
+  style={{
+    marginTop: "34px",
+    display: "flex",
+    justifyContent: "center",
+  }}
+>
+  <button
+    style={{
+      height: "54px",
+      padding: "0 34px",
+      borderRadius: "999px",
+      border: "none",
+      cursor: "pointer",
+
+      background:
+        "linear-gradient(90deg,#D8AE88,#C98E62)",
+
+      color: "#111",
+
+      fontSize: "15px",
+
+      fontWeight: 500,
+    }}
+  >
+    Continuar con el método seleccionado
+  </button>
+</div>
+
+    </div>
+  </div>
+)}
 
 </section>
       </main>
