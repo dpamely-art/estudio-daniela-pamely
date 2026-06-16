@@ -11,7 +11,8 @@ import { useMuseum } from "../context/MuseumContext";
 
 export default function ObraPage() {
 
-  const { addWork } = useMuseum();
+  const { addWork, addFavorite } =
+  useMuseum();
 
   const artwork = artworks[0];
 
@@ -61,17 +62,26 @@ export default function ObraPage() {
             }
             right={
   <ObraRightPanel
-   artwork={artwork}
-    onAdd={() => {
-  addWork({
-    id: artwork.id,
-    title: artwork.title,
-    collection: artwork.collection,
-    price: `${artwork.price} ${artwork.currency}`,
-    image: artwork.images[0],
-  });
-}}
-  />
+  artwork={artwork}
+  onAdd={() => {
+    addWork({
+      id: artwork.id,
+      title: artwork.title,
+      collection: artwork.collection,
+      price: `${artwork.price} ${artwork.currency}`,
+      image: artwork.images[0],
+    });
+  }}
+  onSave={() => {
+    addFavorite({
+      id: artwork.id,
+      title: artwork.title,
+      collection: artwork.collection,
+      price: `${artwork.price} ${artwork.currency}`,
+      image: artwork.images[0],
+    });
+  }}
+/>
 }
 
           />
