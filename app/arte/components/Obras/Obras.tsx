@@ -9,6 +9,10 @@ type Props = {
   onNew: () => void;
 };
 
+type Props = {
+  onNew: () => void;
+};
+
 export default function Obras({
   onNew,
 }: Props) {

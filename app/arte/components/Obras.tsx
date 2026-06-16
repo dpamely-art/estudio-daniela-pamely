@@ -1,6 +1,12 @@
 "use client";
 
-export default function Obras() {
+type Props = {
+  onNew: () => void;
+};
+
+export default function Obras({
+  onNew,
+}: Props) {
   return (
     <section>
       <div
@@ -60,6 +66,7 @@ export default function Obras() {
   </div>
 
   <button
+    onClick={onNew}
     style={{
       height: "52px",
       padding: "0 28px",
