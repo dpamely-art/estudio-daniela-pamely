@@ -38,7 +38,10 @@ export default function BreadcrumbMuseo({
       >
         <button
           type="button"
-          onClick={() => router.push(href)}
+         onClick={() => {
+  console.log("CLICK BREADCRUMB", href);
+  router.push(href);
+}}
           className="
             inline-flex
             items-center
