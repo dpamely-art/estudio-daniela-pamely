@@ -388,7 +388,11 @@ const [activeModule, setActiveModule] =
 )}
 
    {activeModule === "obras" && (
-  <Obras />
+  <Obras
+    onNew={() =>
+      setActiveModule("nuevaObra")
+    }
+  />
 )}
 
    {activeModule === "nuevaObra" && (
