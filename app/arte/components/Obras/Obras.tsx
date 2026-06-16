@@ -5,17 +5,13 @@ import ObrasToolbar from "./ObrasToolbar";
 import ObrasFilters from "./ObrasFilters";
 import ObrasGrid from "./ObrasGrid";
 
-type Props = {
-  onNew: () => void;
-};
-
-type Props = {
+type ObrasProps = {
   onNew: () => void;
 };
 
 export default function Obras({
   onNew,
-}: Props) {
+}: ObrasProps) {
   return (
     <>
       <ObrasHeader />
