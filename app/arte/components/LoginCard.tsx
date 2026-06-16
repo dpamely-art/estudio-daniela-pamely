@@ -2,11 +2,59 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginCard() {
 
   const [showPassword, setShowPassword] =
     useState(false);
+
+    const [email, setEmail] = useState("");
+
+    const [password, setPassword] =
+    useState("");
+
+    const [error, setError] =
+     useState("");
+    
+    const router = useRouter();
+
+    function handleLogin() {
+
+  setError("");
+
+  const adminEmail =
+    "dpev.arq@gmail.com";
+
+  const adminPassword =
+    "daniela2026";
+
+  const collectorEmail =
+    "demo@coleccionista.com";
+
+  const collectorPassword =
+    "coleccionista2026";
+
+  if (
+    email === adminEmail &&
+    password === adminPassword
+  ) {
+    router.push("/arte/mi-perfil");
+    return;
+  }
+
+  if (
+  email === collectorEmail &&
+  password === collectorPassword
+) {
+  router.push("/arte/perfil");
+  return;
+}
+
+  setError(
+    "Correo o contraseña incorrectos."
+  );
+}
 
   return (
     <section
@@ -121,6 +169,11 @@ export default function LoginCard() {
         </p>
         <input
           type="email"
+
+          value={email}
+          onChange={(e)=>
+          setEmail(e.target.value)}
+
           placeholder="Correo electrónico"
           style={{
             width: "100%",
@@ -149,6 +202,13 @@ export default function LoginCard() {
 >
   <input
     type={showPassword ? "text" : "password"}
+    
+    value={password}
+
+    onChange={(e)=>
+    setPassword(e.target.value)}
+
+
     placeholder="Contraseña"
     style={{
       width: "100%",
@@ -246,31 +306,49 @@ export default function LoginCard() {
 </Link>
 </div>
         <button
-          style={{
-            width: "100%",
-            height: "50px",
+  onClick={handleLogin}
+  style={{
+    width: "100%",
+    height: "50px",
 
-            borderRadius: "999px",
+    borderRadius: "999px",
 
-            border: "none",
+    border: "none",
 
-            background:
-              "linear-gradient(90deg,#D8AE88,#C98E62)",
+    background:
+      "linear-gradient(90deg,#D8AE88,#C98E62)",
 
-            color: "#111",
+    color: "#111",
 
-            letterSpacing: ".22em",
+    letterSpacing: ".22em",
 
-            fontSize: "12px",
+    fontSize: "12px",
 
-            fontWeight: 500,
+    fontWeight: 500,
 
-            cursor: "pointer",
-          }}
-        >
-          CONTINUAR
-        </button>
+    cursor: "pointer",
+  }}
+>
+  CONTINUAR
+</button>
 
+{
+  error && (
+    <div
+      style={{
+        marginTop: "16px",
+
+        color: "#D8AE88",
+
+        textAlign: "center",
+
+        fontSize: "13px",
+      }}
+    >
+      {error}
+    </div>
+  )
+}
          <div
   style={{
     display: "flex",

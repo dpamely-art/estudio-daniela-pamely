@@ -8,9 +8,12 @@ import CheckoutActions from "../components/CheckoutActions";
 import { useEffect, useState } from "react";
 import PaymentSelector from "../components/PaymentSelector";
 import ProcessingIncorporation from "../components/ProcessingIncorporation";
+import { useRouter } from "next/navigation";
 
 export default function CheckoutPage() {
   const { selectedWorks } = useMuseum();
+
+  const router = useRouter();
 
   const [paymentMethod, setPaymentMethod] =
   useState<"apple" | "mercadopago">(
@@ -350,25 +353,22 @@ const total = selectedWorks.reduce(
   }}
 >
   <button
-    style={{
-      height: "54px",
-      padding: "0 34px",
-      borderRadius: "999px",
-      border: "none",
-      cursor: "pointer",
-
-      background:
-        "linear-gradient(90deg,#D8AE88,#C98E62)",
-
-      color: "#111",
-
-      fontSize: "15px",
-
-      fontWeight: 500,
-    }}
-  >
-    Continuar con el método seleccionado
-  </button>
+  onClick={() => router.push("/arte/perfil")}
+  style={{
+    height: "54px",
+    padding: "0 34px",
+    borderRadius: "999px",
+    border: "none",
+    cursor: "pointer",
+    background:
+      "linear-gradient(90deg,#D8AE88,#C98E62)",
+    color: "#111",
+    fontSize: "15px",
+    fontWeight: 500,
+  }}
+>
+  Continuar con el método seleccionado
+</button>
 </div>
 
     </div>

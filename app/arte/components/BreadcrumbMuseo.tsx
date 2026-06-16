@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 type BreadcrumbMuseoProps = {
   href: string;
@@ -10,23 +10,23 @@ type BreadcrumbMuseoProps = {
 export default function BreadcrumbMuseo({
   href,
   label,
-}: BreadcrumbMuseoProps) {
+}: BreadcrumbMuseoProps){
+  const router = useRouter();
+
   return (
     <div
-    style={{
-  position: "sticky",
-  top: "140px",
-  zIndex: 30,
-}}
+      style={{
+        position: "sticky",
+        top: "40px",
+        zIndex: 30,
+      }}
       className="
         w-full
         flex
         justify-center
-
-        px-8
+        px-2
         lg:px-12
         xl:px-16
-
         pt-8
       "
     >
@@ -36,33 +36,30 @@ export default function BreadcrumbMuseo({
           max-w-[1500px]
         "
       >
-        <Link
-          href={href}
+        <button
+          type="button"
+          onClick={() => router.push(href)}
           className="
             inline-flex
             items-center
             gap-2
-
             text-sm
-
             font-light
-
             tracking-wide
-
             text-[#D8AE88]
-
             hover:opacity-80
-
             transition-opacity
           "
           style={{
-            textDecoration: "none",
+            background: "none",
+            border: "none",
+            padding: 0,
+            cursor: "pointer",
           }}
         >
           <span>←</span>
-
           <span>{label}</span>
-        </Link>
+        </button>
       </div>
     </div>
   );

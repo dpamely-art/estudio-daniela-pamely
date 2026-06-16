@@ -4,7 +4,7 @@ import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
 import { useRouter } from "next/navigation";
 
-export default function CertificadosPage() {
+export default function ConfirmacionPage() {
 
   const router = useRouter();
 
@@ -21,6 +21,7 @@ export default function CertificadosPage() {
           padding: "140px 60px 100px",
           color: "#ECE3D9",
           minHeight: "100vh",
+          textAlign: "center",
         }}
       >
         <div
@@ -31,38 +32,39 @@ export default function CertificadosPage() {
             textTransform: "uppercase",
           }}
         >
-          Certificado de incorporación
+          Incorporación confirmada
         </div>
 
         <h1
           style={{
             marginTop: "18px",
-            fontSize: "56px",
+            fontSize: "58px",
             fontWeight: 200,
           }}
         >
-          Archivo del Estudio
+          Bienvenido al Archivo
         </h1>
 
         <p
           style={{
-            marginTop: "24px",
-            maxWidth: "760px",
-            color: "rgba(255,255,255,.68)",
+            margin: "30px auto 0",
+            maxWidth: "720px",
             lineHeight: 1.9,
+            color: "rgba(255,255,255,.68)",
             fontSize: "18px",
           }}
         >
-          El Estudio Daniela Pamely certifica que
-          esta incorporación ha sido registrada y
-          formará parte del historial digital del
-          coleccionista.
+          El Museo ha recibido tu solicitud de
+          incorporación y ha iniciado la preparación
+          de tu expediente. A continuación podrás
+          consultar el certificado generado para esta
+          incorporación.
         </p>
 
         <div
           style={{
-            marginTop: "50px",
-            padding: "34px",
+            marginTop: "60px",
+            padding: "36px",
             borderRadius: "24px",
             background:
               "linear-gradient(180deg,#11141A,#0A0C10)",
@@ -72,50 +74,34 @@ export default function CertificadosPage() {
         >
           <div
             style={{
-              color: "#D8AE88",
-              fontSize: "12px",
-              letterSpacing: ".22em",
-              textTransform: "uppercase",
-            }}
-          >
-            Estado
-          </div>
-
-          <div
-            style={{
-              marginTop: "16px",
-              fontSize: "30px",
+              fontSize: "32px",
               fontWeight: 200,
             }}
           >
-            📜 Certificado preparado
+            🏛️ Incorporación aceptada
           </div>
 
           <div
             style={{
-              marginTop: "18px",
-              color: "rgba(255,255,255,.64)",
+              marginTop: "20px",
+              color: "rgba(255,255,255,.62)",
               lineHeight: 1.8,
             }}
           >
-            En la siguiente versión este documento
-            será generado dinámicamente con número
-            de certificado, firma digital,
-            metadatos de la obra y código de
-            verificación.
+            El siguiente paso es consultar el
+            certificado emitido por el Estudio para
+            esta incorporación.
           </div>
         </div>
 
         <div
           style={{
             marginTop: "50px",
-            display: "flex",
-            justifyContent: "flex-end",
           }}
         >
           <button
             onClick={() =>
-              router.push("/arte/historial")
+              router.push("/arte/certificados")
             }
             style={{
               height: "56px",
@@ -130,7 +116,7 @@ export default function CertificadosPage() {
               fontWeight: 600,
             }}
           >
-            Ir a mi historial
+            Ver certificado
           </button>
         </div>
       </main>

@@ -33,7 +33,7 @@ const menu = [
 ];
 
 type NavigationMuseoProps = {
-  onOpenConversation: () => void;
+  onOpenConversation?: () => void;
 };
 
 export default function NavigationMuseo({
@@ -131,7 +131,7 @@ export default function NavigationMuseo({
   onClick={(e) => {
     if (item.title === "INTRODUCCIÓN") {
       e.preventDefault();
-      onOpenConversation();
+      onOpenConversation?.();
     }
   }}
   className={`
@@ -253,7 +253,7 @@ export default function NavigationMuseo({
 
     if (item.title === "INTRODUCCIÓN") {
       e.preventDefault();
-      onOpenConversation();
+      onOpenConversation?.();
     }
   }}
   className="group relative"

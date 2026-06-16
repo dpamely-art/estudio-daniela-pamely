@@ -8,6 +8,15 @@ import Obras from "../components/Obras";
 import Link from "next/link";
 import Dashboard from "../components/Dashboard";
 import NuevaObra from "../components/NuevaObra";
+import Colecciones from "../components/Colecciones";
+import Coleccionistas from "../components/Coleccionistas";
+import Pedidos from "../components/Pedidos";
+import Certificados from "../components/Certificados";
+import Envios from "../components/Envios";
+import Suscripciones from "../components/Suscripciones";
+import Estadisticas from "../components/Estadisticas";
+import Usuarios from "../components/Usuarios";
+import Configuracion from "../components/Configuracion";
 
 export default function MiPerfilPage() {
 const [activeModule, setActiveModule] =
@@ -255,73 +264,82 @@ const [activeModule, setActiveModule] =
   }}
 >
   <aside
-    style={{
-      border: "1px solid rgba(216,174,136,.16)",
-      borderRadius: "20px",
-      padding: "24px",
-      background:
-        "linear-gradient(180deg,#11141A,#0A0C10)",
-      position: "sticky",
-      top: "120px",
-    }}
-  >
-    {[
-  {
-    label: "🏠 Inicio",
-    value: "inicio",
-  },
-  {
-    label: "🎨 Obras",
-    value: "obras",
-  },
-  {
-    label: "🖼 Colecciones",
-    value: "colecciones",
-  },
-  {
-    label: "📦 Pedidos",
-    value: "pedidos",
-  },
-  {
-    label: "📜 Certificados",
-    value: "certificados",
-  },
-  {
-    label: "👥 Equipo",
-    value: "equipo",
-  },
-  {
-    label: "⚙ Configuración",
-    value: "configuracion",
-  },
-].map((item) => (
-  
-      <div
-        key={item.value}
-        onClick={() =>
-  setActiveModule(item.value)
-}
-        style={{
-          
-          color: "#ECE3D9",
-          borderBottom:
-            "1px solid rgba(255,255,255,.06)",
-          cursor: "pointer",
-          background:
-  activeModule === item.value
-    ? "rgba(216,174,136,.10)"
-    : "transparent",
-
-borderRadius: "10px",
-
-padding: "14px 12px",
-        }}
-      >
-        {item.label}
-      </div>
-    ))}
-  </aside>
-
+  style={{
+    border: "1px solid rgba(216,174,136,.16)",
+    borderRadius: "20px",
+    padding: "24px",
+    background:
+      "linear-gradient(180deg,#11141A,#0A0C10)",
+    position: "sticky",
+    top: "120px",
+  }}
+>
+  {[
+    {
+      label: "🏠 Inicio",
+      value: "inicio",
+    },
+    {
+      label: "🎨 Obras",
+      value: "obras",
+    },
+    {
+      label: "🖼 Colecciones",
+      value: "colecciones",
+    },
+    {
+      label: "👥 Coleccionistas",
+      value: "coleccionistas",
+    },
+    {
+      label: "📦 Pedidos",
+      value: "pedidos",
+    },
+    {
+      label: "📜 Certificados",
+      value: "certificados",
+    },
+    {
+      label: "🚚 Envíos",
+      value: "envios",
+    },
+    {
+      label: "💳 Suscripciones",
+      value: "suscripciones",
+    },
+    {
+      label: "📊 Estadísticas",
+      value: "estadisticas",
+    },
+    {
+      label: "👤 Usuarios",
+      value: "usuarios",
+    },
+    {
+      label: "⚙ Configuración",
+      value: "configuracion",
+    },
+  ].map((item) => (
+    <div
+      key={item.value}
+      onClick={() => setActiveModule(item.value)}
+      style={{
+        color: "#ECE3D9",
+        borderBottom:
+          "1px solid rgba(255,255,255,.06)",
+        cursor: "pointer",
+        background:
+          activeModule === item.value
+            ? "rgba(216,174,136,.10)"
+            : "transparent",
+        borderRadius: "10px",
+        padding: "14px 12px",
+      }}
+    >
+      {item.label}
+    </div>
+  ))}
+</aside>
   <main
     style={{
       border: "1px solid rgba(216,174,136,.16)",
@@ -333,15 +351,130 @@ padding: "14px 12px",
     }}
   >
 
-  {activeModule === "inicio" && (
-  <Dashboard />
+  {activeModule === "colecciones" && (
+  <Colecciones />
+)}
+
+   {activeModule === "coleccionistas" && (
+  <Coleccionistas />
+)}
+
+   {activeModule === "pedidos" && (
+  <Pedidos />
+)}
+
+   {activeModule === "certificados" && (
+  <Certificados />
+)}
+   
+   {activeModule === "suscripciones" && (
+  <Suscripciones />
+)}
+
+   {activeModule === "estadisticas" && (
+  <Estadisticas />
+)}
+
+   {activeModule === "envios" && (
+  <Envios />
+)}
+
+   {activeModule === "usuarios" && (
+  <Usuarios />
+)}
+
+   {activeModule === "configuracion" && (
+  <Configuracion />
 )}
 
    {activeModule === "obras" && (
-  <Obras />
+  <Obras
+    onNew={() =>
+      setActiveModule("nuevaObra")
+    }
+  />
 )}
+
    {activeModule === "nuevaObra" && (
   <NuevaObra />
+)}
+
+   {activeModule === "colecciones" && (
+  <div>
+    <h2
+      style={{
+        color: "#ECE3D9",
+        fontSize: "42px",
+        fontWeight: 200,
+      }}
+    >
+      Colecciones
+    </h2>
+
+    <p
+      style={{
+        marginTop: "18px",
+        color: "rgba(255,255,255,.65)",
+        lineHeight: 1.8,
+      }}
+    >
+      Desde aquí administrarás las salas,
+      colecciones permanentes y futuras
+      exposiciones del museo.
+    </p>
+  </div>
+)}
+
+     {activeModule === "coleccionistas" && (
+  <div>
+    <h2
+      style={{
+        color: "#ECE3D9",
+        fontSize: "42px",
+        fontWeight: 200,
+      }}
+    >
+      Coleccionistas
+    </h2>
+
+    <p
+      style={{
+        marginTop: "18px",
+        color: "rgba(255,255,255,.65)",
+        lineHeight: 1.8,
+      }}
+    >
+      Aquí podrás consultar los miembros,
+      sus suscripciones y el historial de
+      su colección.
+    </p>
+  </div>
+)}
+
+     {activeModule === "pedidos" && (
+  <div>
+    <h2
+      style={{
+        color: "#ECE3D9",
+        fontSize: "42px",
+        fontWeight: 200,
+      }}
+    >
+      Pedidos especiales
+    </h2>
+
+    <p
+      style={{
+        marginTop: "18px",
+        color: "rgba(255,255,255,.65)",
+        lineHeight: 1.8,
+      }}
+    >
+      Gestiona solicitudes personalizadas,
+      conversaciones y proyectos en
+      desarrollo.
+    </p>
+  </div>
 )}
 
   </main>

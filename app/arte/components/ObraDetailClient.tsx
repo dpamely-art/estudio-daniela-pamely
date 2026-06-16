@@ -36,18 +36,11 @@ export default function ObraDetailClient({
           paddingTop: "40px",
         }}
       >
-        <div
-          style={{
-            position: "sticky",
-            top: "40px",
-            zIndex: 20,
-          }}
-        >
-          <BreadcrumbMuseo
-            href="/arte/colecciones"
-            label="Volver a colecciones"
-          />
-        </div>
+        <BreadcrumbMuseo
+  href="/arte/museo"
+  label="Volver a colecciones"
+/>
+      
 
         <section
           style={{

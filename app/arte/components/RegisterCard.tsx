@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import LegalModal from "./LegalModal";
 
 export default function RegisterCard() {
 
@@ -10,6 +11,12 @@ useState(false);
 
   const [showConfirmPassword, setShowConfirmPassword] =
 useState(false);
+
+  const [openTerms, setOpenTerms] =
+  useState(false);
+
+const [openPrivacy, setOpenPrivacy] =
+  useState(false);
 
   return (
     <section
@@ -302,7 +309,15 @@ useState(false);
           color: "#D8AE88",
         }}
       >
-        Términos y Condiciones
+        <span
+  onClick={() => setOpenTerms(true)}
+  style={{
+    color: "#D8AE88",
+    cursor: "pointer",
+  }}
+>
+  Términos y Condiciones
+</span>
       </span>{" "}
       y la{" "}
       <span
@@ -310,7 +325,15 @@ useState(false);
           color: "#D8AE88",
         }}
       >
-        Política de Privacidad
+        <span
+  onClick={() => setOpenPrivacy(true)}
+  style={{
+    color: "#D8AE88",
+    cursor: "pointer",
+  }}
+>
+  Política de Privacidad
+</span>
       </span>.
     </span>
   </label>
@@ -457,6 +480,20 @@ useState(false);
     ¿Ya formas parte del museo?
   </div>
 
+      <>
+  <LegalModal
+    open={openTerms}
+    title="Términos y Condiciones"
+    onClose={() => setOpenTerms(false)}
+  />
+
+  <LegalModal
+    open={openPrivacy}
+    title="Política de Privacidad"
+    onClose={() => setOpenPrivacy(false)}
+  />
+</>
+
   <Link
     href="/arte/ingresar"
     style={{
@@ -479,5 +516,6 @@ useState(false);
 
       </div>
     </section>
+      
   );
 }

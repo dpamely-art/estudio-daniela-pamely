@@ -2,10 +2,18 @@
 
 import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
+import PaymentSelector from "../components/PaymentSelector";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
-export default function HistorialPage() {
+export default function PagoPage() {
+
   const router = useRouter();
+
+  const [paymentMethod, setPaymentMethod] =
+    useState<"apple" | "mercadopago">(
+      "apple"
+    );
 
   return (
     <>
@@ -30,7 +38,7 @@ export default function HistorialPage() {
             textTransform: "uppercase",
           }}
         >
-          Historial del coleccionista
+          Expediente del coleccionista
         </div>
 
         <h1
@@ -40,7 +48,7 @@ export default function HistorialPage() {
             fontWeight: 200,
           }}
         >
-          Tu archivo personal
+          Método de incorporación
         </h1>
 
         <p
@@ -52,67 +60,33 @@ export default function HistorialPage() {
             fontSize: "18px",
           }}
         >
-          Aquí el Museo concentrará todas tus
-          incorporaciones, certificados y futuras
-          adquisiciones para formar tu colección
-          personal.
+          Selecciona el método con el que deseas
+          continuar la incorporación de tu obra al
+          Archivo del Estudio Daniela Pamely.
         </p>
 
         <div
           style={{
             marginTop: "50px",
-            padding: "30px",
-            borderRadius: "22px",
-            background:
-              "linear-gradient(180deg,#11141A,#0A0C10)",
-            border:
-              "1px solid rgba(216,174,136,.18)",
           }}
         >
-          <div
-            style={{
-              color: "#D8AE88",
-              fontSize: "12px",
-              letterSpacing: ".22em",
-              textTransform: "uppercase",
-            }}
-          >
-            Estado actual
-          </div>
-
-          <div
-            style={{
-              marginTop: "18px",
-              fontSize: "30px",
-              fontWeight: 200,
-            }}
-          >
-            Aún no existen incorporaciones registradas
-          </div>
-
-          <div
-            style={{
-              marginTop: "18px",
-              color: "rgba(255,255,255,.64)",
-              lineHeight: 1.8,
-            }}
-          >
-            Una vez finalizado el proceso de
-            incorporación, tus obras y certificados
-            aparecerán automáticamente en este
-            archivo.
-          </div>
+          <PaymentSelector
+            method={paymentMethod}
+            onChange={setPaymentMethod}
+          />
         </div>
 
         <div
           style={{
-            marginTop: "34px",
+            marginTop: "40px",
             display: "flex",
             justifyContent: "flex-end",
           }}
         >
           <button
-            onClick={() => router.push("/arte/mi-coleccion")}
+            onClick={() =>
+              router.push("/arte/confirmacion")
+            }
             style={{
               height: "54px",
               padding: "0 34px",

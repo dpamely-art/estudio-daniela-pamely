@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { collections } from "../data/collections";
 
+
 export default function MuseoPage() {
+  
   return (
     <main
+        
+       
       className="
         min-h-screen
 
@@ -21,6 +25,36 @@ export default function MuseoPage() {
       "
     >
       {/* Introducción */}
+       <div
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    marginBottom: "30px",
+  }}
+>
+  <Link
+    href="/arte/perfil"
+    style={{
+      textDecoration: "none",
+      border: "1px solid rgba(216,174,136,.35)",
+      color: "#D8AE88",
+      padding: "10px 18px",
+      borderRadius: "999px",
+      letterSpacing: ".08em",
+    }}
+  >
+    ← Mi Perfil
+  </Link>
+</div>
+       <section
+  style={{
+    display: "flex",
+    justifyContent: "flex-end",
+    marginBottom: "30px",
+  }}
+>
+  
+</section>
 
       <section className="max-w-4xl">
         <p

@@ -4,7 +4,7 @@ import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
 import { useRouter } from "next/navigation";
 
-export default function HistorialPage() {
+export default function EnvioPage() {
   const router = useRouter();
 
   return (
@@ -30,7 +30,7 @@ export default function HistorialPage() {
             textTransform: "uppercase",
           }}
         >
-          Historial del coleccionista
+          Expediente del coleccionista
         </div>
 
         <h1
@@ -40,7 +40,7 @@ export default function HistorialPage() {
             fontWeight: 200,
           }}
         >
-          Tu archivo personal
+          Método de envío
         </h1>
 
         <p
@@ -52,67 +52,57 @@ export default function HistorialPage() {
             fontSize: "18px",
           }}
         >
-          Aquí el Museo concentrará todas tus
-          incorporaciones, certificados y futuras
-          adquisiciones para formar tu colección
-          personal.
+          En una siguiente fase el Museo calculará
+          automáticamente costos y tiempos de entrega
+          según tu ubicación. Por ahora selecciona el
+          método de incorporación.
         </p>
 
         <div
           style={{
             marginTop: "50px",
-            padding: "30px",
-            borderRadius: "22px",
-            background:
-              "linear-gradient(180deg,#11141A,#0A0C10)",
-            border:
-              "1px solid rgba(216,174,136,.18)",
+            display: "grid",
+            gap: "18px",
           }}
         >
-          <div
-            style={{
-              color: "#D8AE88",
-              fontSize: "12px",
-              letterSpacing: ".22em",
-              textTransform: "uppercase",
-            }}
-          >
-            Estado actual
-          </div>
-
-          <div
-            style={{
-              marginTop: "18px",
-              fontSize: "30px",
-              fontWeight: 200,
-            }}
-          >
-            Aún no existen incorporaciones registradas
-          </div>
-
-          <div
-            style={{
-              marginTop: "18px",
-              color: "rgba(255,255,255,.64)",
-              lineHeight: 1.8,
-            }}
-          >
-            Una vez finalizado el proceso de
-            incorporación, tus obras y certificados
-            aparecerán automáticamente en este
-            archivo.
-          </div>
+          {[
+            "📦 Envío asegurado a domicilio",
+            "🏛️ Entrega personalizada por el Estudio",
+            "🌎 Envío internacional",
+          ].map((item) => (
+            <button
+              key={item}
+              style={{
+                width: "100%",
+                padding: "24px",
+                borderRadius: "20px",
+                border:
+                  "1px solid rgba(216,174,136,.18)",
+                background:
+                  "linear-gradient(180deg,#11141A,#0A0C10)",
+                color: "#ECE3D9",
+                fontSize: "18px",
+                fontWeight: 300,
+                textAlign: "left",
+                cursor: "pointer",
+              }}
+            >
+              {item}
+            </button>
+          ))}
         </div>
 
         <div
           style={{
-            marginTop: "34px",
+            marginTop: "40px",
             display: "flex",
             justifyContent: "flex-end",
           }}
         >
           <button
-            onClick={() => router.push("/arte/mi-coleccion")}
+            onClick={() =>
+              router.push("/arte/checkout")
+            }
             style={{
               height: "54px",
               padding: "0 34px",
@@ -126,7 +116,7 @@ export default function HistorialPage() {
               fontWeight: 500,
             }}
           >
-            Continuar
+            Continuar al pago
           </button>
         </div>
       </main>

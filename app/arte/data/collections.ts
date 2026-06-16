@@ -69,25 +69,9 @@ export const collections = [
   image: "lino9.jpeg",
 },
 
-  {
-  id: "certificado",
-  number: "006",
-  title: "Certificado de autenticidad",
-  subtitle:
-    "Cada obra acredita su originalidad.",
-  phrase:
-    "Toda pieza forma parte del archivo del Estudio.",
-
-  description:
-    "Cada obra incorpora un certificado de autenticidad que acredita su origen, edición y registro dentro del archivo del Estudio Daniela Pamely, garantizando su trazabilidad y valor documental.",
-
-  route: "/arte/certificado",
-  image: "/certificado1.jpeg",
-},
-
 {
   id: "especiales",
-  number: "007",
+  number: "006",
   title: "Pedidos especiales",
   subtitle:
     "Cuéntame tu historia y hacemos la pieza ideal.",
@@ -101,19 +85,4 @@ export const collections = [
   image: "/especial16.jpeg",
 },
 
-{
-  id: "entrega",
-  number: "008",
-  title: "La obra llega a ti",
-  subtitle:
-    "Envíos protegidos a donde sea que estés.",
-  phrase:
-    "El arte viaja para habitar nuevos espacios.",
-
-  description:
-    "Cada obra es preparada cuidadosamente para su traslado utilizando materiales de protección y embalaje especializado, con el objetivo de que llegue en perfectas condiciones a su nuevo hogar.",
-
-  route: "/arte/envios",
-  image: "/entrega15.jpeg",
-}
 ];

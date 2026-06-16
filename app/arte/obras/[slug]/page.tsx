@@ -3,23 +3,32 @@ import { artworks } from "../../data/artworks";
 import ObraDetailClient from "../../components/ObraDetailClient";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function ObraPage({
+export default async function ObraPage({
   params,
 }: Props) {
+  const { slug } = await params;
+
+console.log("SLUG:", slug);
+console.log(
+  "IDS:",
+  artworks.map((a) => a.id)
+);
+
   const artwork = artworks.find(
-    (artwork) => artwork.id === params.slug
+    (artwork) => artwork.id === slug
   );
 
   if (!artwork) {
     notFound();
   }
 
-  return (
+
+  return <ObraDetailClient artwork={artwork} />;
   <div
     style={{
       background: "black",
@@ -29,8 +38,7 @@ export default function ObraPage({
       minHeight: "100vh",
     }}
   >
-    <div>slug: {params.slug}</div>
-
+    <div>slug: {slug}</div>
     <div>
       ids:
       {artworks.map((a) => (
@@ -38,5 +46,5 @@ export default function ObraPage({
       ))}
     </div>
   </div>
-);
+
 }

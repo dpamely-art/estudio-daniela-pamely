@@ -40,7 +40,7 @@ export default function ObraPage() {
           }}
         >
           <BreadcrumbMuseo
-            href="/arte/colecciones"
+            href="/arte/museo"
             label="Volver a colecciones"
           />
         </div>

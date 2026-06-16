@@ -56,7 +56,7 @@ export default function MiColeccionPage() {
           </p>
 
           <Link
-            href="/arte/colecciones"
+            href="/arte/museo"
             style={{
               color: "#D8AE88",
               textDecoration: "none",

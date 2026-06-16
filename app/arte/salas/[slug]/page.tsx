@@ -9,16 +9,21 @@ import { artworks } from "../../data/artworks";
 import Link from "next/link";
 
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function SalaPage({
+export default async function SalaPage({
   params,
 }: Props) {
+
+  const { slug } = await params;
+
+  console.log(params);
+  console.log(slug);
   const collection = collections.find(
-  (item) => item.id === params.slug
+  (item) => item.id === slug
 );
 
   if (!collection) {
@@ -26,16 +31,14 @@ export default function SalaPage({
   }
 
   const works = artworks.filter(
-    (item) => item.collection === params.slug
+    (item) => item.collection === slug
   );
 
   return (
     <>
-      <NavigationMuseo
-        onOpenConversation={() => {}}
-      />
+  <NavigationMuseo />
 
-      <main
+  <main
         style={{
           maxWidth: "1500px",
           margin: "0 auto",
