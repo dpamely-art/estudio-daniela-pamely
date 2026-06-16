@@ -8,11 +8,13 @@ import ObraActions from "./ObraActions";
 type Props = {
   artwork: (typeof import("../data/artworks").artworks)[number];
   onAdd: () => void;
+  onSave: () => void;
 };
 
 export default function ObraRightPanel({
   artwork,
   onAdd,
+  onSave,
 }: Props) {
   return (
     <div
@@ -90,6 +92,7 @@ export default function ObraRightPanel({
 
         <ObraActions
   onAdd={onAdd}
+  onSave={onSave}
 />
       </div>
     </div>

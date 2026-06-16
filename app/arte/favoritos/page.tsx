@@ -2,8 +2,12 @@
 
 import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
+import { useMuseum } from "../context/MuseumContext";
+import Link from "next/link";
 
 export default function FavoritosPage() {
+  const { favoriteWorks } = useMuseum();
+
   return (
     <>
       <NavigationMuseo
@@ -64,7 +68,90 @@ export default function FavoritosPage() {
               "rgba(255,255,255,.03)",
           }}
         >
-          Aún no tienes obras guardadas.
+          {favoriteWorks.length === 0 ? (
+            "Aún no tienes obras guardadas."
+          ) : (
+            <>
+  <p
+    style={{
+      marginBottom: "24px",
+    }}
+  >
+    Tienes {favoriteWorks.length} obra(s)
+    guardada(s).
+  </p>
+
+  <div
+    style={{
+      display: "grid",
+      gap: "24px",
+    }}
+  >
+    {favoriteWorks.map((work) => (
+      <div
+        key={work.id}
+        style={{
+          display: "flex",
+          gap: "20px",
+          alignItems: "center",
+          padding: "20px",
+          borderRadius: "18px",
+          background:
+            "rgba(255,255,255,.03)",
+          border:
+            "1px solid rgba(216,174,136,.10)",
+        }}
+      >
+        <img
+          src={work.image}
+          alt={work.title}
+          style={{
+            width: "120px",
+            height: "120px",
+            objectFit: "cover",
+            borderRadius: "12px",
+          }}
+        />
+
+        <div>
+          <h3
+            style={{
+              margin: 0,
+              fontWeight: 300,
+            }}
+          >
+            {work.title}
+          </h3>
+
+          <p
+            style={{
+              marginTop: "8px",
+              color:
+                "rgba(255,255,255,.65)",
+            }}
+          >
+            {work.price}
+          </p>
+
+            <Link
+  href={`/arte/obras/${work.id}`}
+  style={{
+    display: "inline-block",
+    marginTop: "12px",
+    color: "#D8AE88",
+    textDecoration: "none",
+    fontSize: "14px",
+  }}
+>
+  Ver obra →
+</Link>
+
+        </div>
+      </div>
+    ))}
+  </div>
+</>
+          )}
         </div>
       </main>
 

@@ -19,10 +19,13 @@ export type Artwork = {
 
 type MuseumContextType = {
   selectedWorks: Artwork[];
+  favoriteWorks: Artwork[];
 
   addWork: (work: Artwork) => void;
-
   removeWork: (id: string) => void;
+
+  addFavorite: (work: Artwork) => void;
+  removeFavorite: (id: string) => void;
 
   clearCollection: () => void;
 };
@@ -40,6 +43,9 @@ export function MuseumProvider({
   const [selectedWorks, setSelectedWorks] =
     useState<Artwork[]>([]);
 
+  const [favoriteWorks, setFavoriteWorks] =
+    useState<Artwork[]>([]);
+
   useEffect(() => {
     const saved =
       localStorage.getItem("museum-selection");
@@ -50,11 +56,22 @@ export function MuseumProvider({
   }, []);
 
   useEffect(() => {
-    localStorage.setItem(
-      "museum-selection",
-      JSON.stringify(selectedWorks)
+  const savedFavorites =
+    localStorage.getItem("museum-favorites");
+
+  if (savedFavorites) {
+    setFavoriteWorks(
+      JSON.parse(savedFavorites)
     );
-  }, [selectedWorks]);
+  }
+}, []);
+
+     useEffect(() => {
+  localStorage.setItem(
+    "museum-favorites",
+    JSON.stringify(favoriteWorks)
+  );
+}, [favoriteWorks]);
 
   function addWork(work: Artwork) {
     setSelectedWorks((prev) => {
@@ -76,6 +93,26 @@ export function MuseumProvider({
     );
   }
 
+  function addFavorite(work: Artwork) {
+    setFavoriteWorks((prev) => {
+      const exists = prev.some(
+        (item) => item.id === work.id
+      );
+
+      if (exists) {
+        return prev;
+      }
+
+      return [...prev, work];
+    });
+  }
+
+  function removeFavorite(id: string) {
+    setFavoriteWorks((prev) =>
+      prev.filter((item) => item.id !== id)
+    );
+  }
+
   function clearCollection() {
     setSelectedWorks([]);
   }
@@ -83,11 +120,17 @@ export function MuseumProvider({
   const value = useMemo(
     () => ({
       selectedWorks,
+      favoriteWorks,
+
       addWork,
       removeWork,
+
+      addFavorite,
+      removeFavorite,
+
       clearCollection,
     }),
-    [selectedWorks]
+    [selectedWorks, favoriteWorks]
   );
 
   return (

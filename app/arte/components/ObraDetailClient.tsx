@@ -17,7 +17,8 @@ type Props = {
 export default function ObraDetailClient({
   artwork,
 }: Props) {
-    const { addWork } = useMuseum();
+    const { addWork, addFavorite } =
+  useMuseum();
     const [showToast, setShowToast] = useState(false);
   return (
     <>
@@ -57,24 +58,34 @@ export default function ObraDetailClient({
               />
             }
            right={
-  <ObraRightPanel
-    artwork={artwork}
-    onAdd={() => {
-  addWork({
-    id: artwork.id,
-    title: artwork.title,
-    collection: artwork.collection,
-    price: `${artwork.price} ${artwork.currency}`,
-    image: artwork.images[0],
-  });
+ <ObraRightPanel
+  artwork={artwork}
+  onAdd={() => {
+    addWork({
+      id: artwork.id,
+      title: artwork.title,
+      collection: artwork.collection,
+      price: `${artwork.price} ${artwork.currency}`,
+      image: artwork.images[0],
+    });
 
-  setShowToast(true);
+    setShowToast(true);
 
-  setTimeout(() => {
-    setShowToast(false);
-  }, 3000);
-}}
-  />
+    setTimeout(() => {
+      setShowToast(false);
+    }, 3000);
+  }}
+
+  onSave={() => {
+    addFavorite({
+      id: artwork.id,
+      title: artwork.title,
+      collection: artwork.collection,
+      price: `${artwork.price} ${artwork.currency}`,
+      image: artwork.images[0],
+    });
+  }}
+/>
 }
           />
         </section>
