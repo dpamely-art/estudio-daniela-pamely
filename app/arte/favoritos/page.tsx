@@ -6,7 +6,10 @@ import { useMuseum } from "../context/MuseumContext";
 import Link from "next/link";
 
 export default function FavoritosPage() {
-  const { favoriteWorks } = useMuseum();
+  const {
+  favoriteWorks,
+  removeFavorite,
+} = useMuseum();
 
   return (
     <>
@@ -145,7 +148,23 @@ export default function FavoritosPage() {
 >
   Ver obra →
 </Link>
-
+<button
+  onClick={() =>
+    removeFavorite(work.id)
+  }
+  style={{
+    display: "block",
+    marginTop: "12px",
+    background: "transparent",
+    border: "none",
+    color: "#B86B6B",
+    cursor: "pointer",
+    padding: 0,
+    fontSize: "14px",
+  }}
+>
+  Eliminar
+</button>
         </div>
       </div>
     ))}
