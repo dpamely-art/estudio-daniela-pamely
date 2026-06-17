@@ -5,7 +5,7 @@ import { useMuseum } from "../context/MuseumContext";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const menu = [
+const guestMenu = [
   {
     title: "INTRODUCCIÓN",
     href: "/arte",
@@ -19,8 +19,36 @@ const menu = [
     href: "/arte/museo",
   },
   {
-    title: "MI SELECCIÓN",
+    title: "SUSCRIPCIÓN",
+    href: "/arte/suscripcion",
+  },
+  {
+    title: "SALIR",
+    href: "/inicio",
+  },
+];
+
+const collectorMenu = [
+
+  {
+    title: "INTRODUCCIÓN",
+    href: "/arte",
+  },
+  {
+    title: "COLECCIONES",
+    href: "/arte/museo",
+  },
+  {
+    title: "MI COLECCIÓN",
     href: "/arte/mi-coleccion",
+  },
+  {
+    title: "FAVORITOS",
+    href: "/arte/favoritos",
+  },
+  {
+    title: "MI PERFIL",
+    href: "/arte/perfil",
   },
   {
     title: "SUSCRIPCIÓN",
@@ -41,8 +69,19 @@ export default function NavigationMuseo({
 }: NavigationMuseoProps) {
   
   const pathname = usePathname();
-  const { selectedWorks } = useMuseum();
-  const [isOpen, setIsOpen] = useState(false);
+
+const {
+  selectedWorks,
+  favoriteWorks,
+  userType,
+} = useMuseum();
+
+const [isOpen, setIsOpen] = useState(false);
+
+const menu =
+  userType === "guest"
+    ? guestMenu
+    : collectorMenu;
 
   return (
     <header
@@ -152,12 +191,16 @@ export default function NavigationMuseo({
                       index === menu.length - 1 ? 0 : 58,
                   }}
                 >
-                  <span>
+                 <span>
   {item.title}
 
-  {item.title === "MI SELECCIÓN" &&
+  {item.href === "/arte/mi-coleccion" &&
     selectedWorks.length > 0 &&
     ` (${selectedWorks.length})`}
+
+  {item.href === "/arte/favoritos" &&
+    favoriteWorks.length > 0 &&
+    ` (${favoriteWorks.length})`}
 </span>
 
                   <span

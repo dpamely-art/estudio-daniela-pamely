@@ -17,7 +17,18 @@ export type Artwork = {
   image: string;
 };
 
+type UserType =
+  | "guest"
+  | "collector"
+  | "founder";
+
 type MuseumContextType = {
+  userType: UserType;
+
+  setUserType: React.Dispatch<
+    React.SetStateAction<UserType>
+  >;
+
   selectedWorks: Artwork[];
   favoriteWorks: Artwork[];
 
@@ -46,9 +57,14 @@ export function MuseumProvider({
   const [favoriteWorks, setFavoriteWorks] =
     useState<Artwork[]>([]);
 
+  const [userType, setUserType] =
+    useState<UserType>("founder");
+
   useEffect(() => {
     const saved =
-      localStorage.getItem("museum-selection");
+      localStorage.getItem(
+        "museum-selection"
+      );
 
     if (saved) {
       setSelectedWorks(JSON.parse(saved));
@@ -56,22 +72,31 @@ export function MuseumProvider({
   }, []);
 
   useEffect(() => {
-  const savedFavorites =
-    localStorage.getItem("museum-favorites");
-
-  if (savedFavorites) {
-    setFavoriteWorks(
-      JSON.parse(savedFavorites)
+    localStorage.setItem(
+      "museum-selection",
+      JSON.stringify(selectedWorks)
     );
-  }
-}, []);
+  }, [selectedWorks]);
 
-     useEffect(() => {
-  localStorage.setItem(
-    "museum-favorites",
-    JSON.stringify(favoriteWorks)
-  );
-}, [favoriteWorks]);
+  useEffect(() => {
+    const savedFavorites =
+      localStorage.getItem(
+        "museum-favorites"
+      );
+
+    if (savedFavorites) {
+      setFavoriteWorks(
+        JSON.parse(savedFavorites)
+      );
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "museum-favorites",
+      JSON.stringify(favoriteWorks)
+    );
+  }, [favoriteWorks]);
 
   function addWork(work: Artwork) {
     setSelectedWorks((prev) => {
@@ -89,7 +114,9 @@ export function MuseumProvider({
 
   function removeWork(id: string) {
     setSelectedWorks((prev) =>
-      prev.filter((item) => item.id !== id)
+      prev.filter(
+        (item) => item.id !== id
+      )
     );
   }
 
@@ -109,7 +136,9 @@ export function MuseumProvider({
 
   function removeFavorite(id: string) {
     setFavoriteWorks((prev) =>
-      prev.filter((item) => item.id !== id)
+      prev.filter(
+        (item) => item.id !== id
+      )
     );
   }
 
@@ -122,6 +151,9 @@ export function MuseumProvider({
       selectedWorks,
       favoriteWorks,
 
+      userType,
+      setUserType,
+
       addWork,
       removeWork,
 
@@ -130,7 +162,11 @@ export function MuseumProvider({
 
       clearCollection,
     }),
-    [selectedWorks, favoriteWorks]
+    [
+      selectedWorks,
+      favoriteWorks,
+      userType,
+    ]
   );
 
   return (

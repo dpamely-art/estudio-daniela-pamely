@@ -3,9 +3,16 @@
 import NavigationMuseo from "../components/NavigationMuseo";
 import FooterMuseo from "../components/FooterMuseo";
 import { useRouter } from "next/navigation";
+import { useMuseum } from "../context/MuseumContext";
 
 export default function PerfilPage() {
   const router = useRouter();
+
+const {
+  selectedWorks,
+  favoriteWorks,
+  userType,
+} = useMuseum();
 
   const cards = [
   {
@@ -26,6 +33,22 @@ export default function PerfilPage() {
     subtitle: "Consulta las obras seleccionadas",
     route: "/arte/mi-coleccion",
   },
+
+  {
+  icon: "🤍",
+  title: "Favoritos",
+  subtitle: "Obras guardadas para después",
+  route: "/arte/favoritos",
+},
+
+   {
+  icon: "📚",
+  title: "Biblioteca Privada",
+  subtitle:
+    "Ensayos, manifiestos y cuadernos del Estudio",
+  route: "/arte/biblioteca",
+},
+
   {
     icon: "📦",
     title: "Mis Pedidos",
@@ -120,23 +143,26 @@ export default function PerfilPage() {
   }}
 >
   {[
-    {
-      value: "0",
-      label: "Obras adquiridas",
-    },
-    {
-      value: "0",
-      label: "Pedidos activos",
-    },
-    {
-      value: "0",
-      label: "Certificados",
-    },
-    {
-      value: "Coleccionista",
-      label: "Nivel",
-    },
-  ].map((item) => (
+  {
+    value: selectedWorks.length.toString(),
+    label: "Mi colección",
+  },
+  {
+    value: favoriteWorks.length.toString(),
+    label: "Favoritos",
+  },
+  {
+    value: "0",
+    label: "Certificados",
+  },
+  {
+  value:
+    userType === "founder"
+      ? "Fundador"
+      : "Coleccionista",
+  label: "Nivel",
+},
+].map((item) => (
     <div
       key={item.label}
       style={{
@@ -169,6 +195,57 @@ export default function PerfilPage() {
     </div>
   ))}
 </section>
+
+         {userType === "founder" && (
+  <section
+    style={{
+      marginTop: "40px",
+      padding: "32px",
+      borderRadius: "22px",
+      background:
+        "linear-gradient(180deg,#1A1410,#0A0C10)",
+      border:
+        "1px solid rgba(216,174,136,.22)",
+    }}
+  >
+    <div
+      style={{
+        color: "#D8AE88",
+        fontSize: "12px",
+        letterSpacing: ".28em",
+        textTransform: "uppercase",
+      }}
+    >
+      Coleccionista Fundador
+    </div>
+
+    <h2
+      style={{
+        marginTop: "16px",
+        fontSize: "34px",
+        fontWeight: 200,
+      }}
+    >
+      Beneficios activos
+    </h2>
+
+    <div
+      style={{
+        marginTop: "24px",
+        display: "grid",
+        gap: "14px",
+        color: "rgba(255,255,255,.72)",
+      }}
+    >
+      <div>✓ Acceso anticipado a colecciones</div>
+      <div>✓ Biblioteca privada</div>
+      <div>✓ Bitácora del Estudio</div>
+      <div>✓ Certificado Fundacional</div>
+      <div>✓ Edición exclusiva anual</div>
+    </div>
+  </section>
+)}
+
         <section
           style={{
             marginTop: "70px",
@@ -358,26 +435,59 @@ export default function PerfilPage() {
       gap: "16px",
     }}
   >
-    {[
-      "Aún no tienes pedidos registrados.",
-      "Aún no has adquirido obras.",
-      "Tus certificados aparecerán aquí.",
-    ].map((item) => (
-      <div
-        key={item}
-        style={{
-          padding: "22px",
-          borderRadius: "18px",
-          border:
-            "1px solid rgba(216,174,136,.12)",
-          background:
-            "rgba(255,255,255,.03)",
-          color: "rgba(255,255,255,.72)",
-        }}
-      >
-        {item}
-      </div>
-    ))}
+    <div
+      style={{
+        padding: "22px",
+        borderRadius: "18px",
+        border:
+          "1px solid rgba(216,174,136,.12)",
+        background:
+          "rgba(255,255,255,.03)",
+        color: "rgba(255,255,255,.72)",
+      }}
+    >
+      {selectedWorks.length > 0
+        ? `Última obra agregada a tu colección: ${
+            selectedWorks[
+              selectedWorks.length - 1
+            ].title
+          }`
+        : "Aún no has agregado obras a tu colección."}
+    </div>
+
+    <div
+      style={{
+        padding: "22px",
+        borderRadius: "18px",
+        border:
+          "1px solid rgba(216,174,136,.12)",
+        background:
+          "rgba(255,255,255,.03)",
+        color: "rgba(255,255,255,.72)",
+      }}
+    >
+      {favoriteWorks.length > 0
+        ? `Último favorito guardado: ${
+            favoriteWorks[
+              favoriteWorks.length - 1
+            ].title
+          }`
+        : "Aún no has guardado favoritos."}
+    </div>
+
+    <div
+      style={{
+        padding: "22px",
+        borderRadius: "18px",
+        border:
+          "1px solid rgba(216,174,136,.12)",
+        background:
+          "rgba(255,255,255,.03)",
+        color: "rgba(255,255,255,.72)",
+      }}
+    >
+      Expediente de coleccionista activo.
+    </div>
   </div>
 </section>
 
